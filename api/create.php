@@ -12,7 +12,7 @@
     <input type="text" name="phoneNumber" value="" placeholder="Telefonnr"/><br>
     <input type="text" name="businessName" value="" placeholder="Företagsnman"/><br>
     <input type="text" name="description" value="" placeholder="Beskrivning" /><br>
-    <input type="text" name="upFile" value="" placeholder="Ladda upp en fil"/><br>
+    <input type="file" name="upFile" value="" placeholder="Ladda upp en fil" id="fileUp"/><br>
     
     <button type="submit">Submit</button>
 </form>
@@ -63,7 +63,6 @@ $stm_insert = $pdo -> prepare($sql);
 $stm_insert -> execute(['fName' => $_POST['firstName'],
                         'lName' => $_POST['lastName'],
                         'mail' => $_POST['email'],
-                        // 'password' => $_GET['pass'],
                         'tel' => $_POST['phoneNumber'],
                         'business' => $_POST['businessName'],
                         'descriptionText' => $_POST['description'],
