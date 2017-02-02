@@ -30,6 +30,24 @@
             $error = true; 
         }
     }
+
+$phone = $_POST['phone'];
+if(preg_match("/[^0-10]/", $phone)) {
+  // $phone is valid
+}else{
+    echo "$phone is not a valid phonenr.";
+    die();
+}
+
+$email = $_POST['email'];
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+  
+} else {
+  
+  echo("$email is not a valid email address");
+    die();
+}
+
     if( $_POST['password'] == $_POST['passwordsecond']){
 
         if(!$error){
@@ -47,17 +65,16 @@
                 $sql = "INSERT INTO `members` (`username`, `business`, `firstName`, `lastName`, `email`, `phone`, `password`)
                 VALUES(:uName, :businessName, :fName, :lName, :mail, :tel, :pass)";
 
-// $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
                 $stm_insert = $pdo -> prepare($sql);
                 $stm_insert -> execute  (['uName' => $_POST['username'],
                     'businessName' => $_POST['business'],
                     'fName' => $_POST['firstName'],
                     'lName' => $_POST['lastName'],
-                    'mail' => $_POST['email'],
+                    'mail' =>  $_POST['email'], 
                     'tel' => $_POST['phone'],
-                        // 'pass' =>  hash("md5", $_POST['password'])
-                    'pass' => crypt( $_POST['password'], "salt") ]);
+                    'pass' =>  crypt($_POST['password'], "salt")
+                     ]);
                 echo "Registrerad";
             }
         }

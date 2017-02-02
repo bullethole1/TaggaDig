@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <form action="#" method="POST">
+    <form action="#" method="POST" enctype="multipart/form-data">
         <input type="text" name="firstName" value="" placeholder="Namn" /><br>
         <input type="text" name="lastName" value="" placeholder="Efternamn"/><br>
         <input type="text" name="email" value="" placeholder="Epost" /><br>
@@ -61,6 +61,8 @@
     }
 }
 }
+
+
 
 ?>
 
