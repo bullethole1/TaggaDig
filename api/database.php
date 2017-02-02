@@ -1,6 +1,6 @@
 <?php
 
-    	$dbHost = 'localhost'; //localhost, min dator
+    	$dbHost = 'localhost';
 		$db = 'taggaDig';
 		$dbUser = 'root';
 		$password = 'root';
