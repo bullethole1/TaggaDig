@@ -1,0 +1,60 @@
+.red {
+
+	background-color: red;
+}
+.no-padding{
+	padding: 0;
+}
+.no-margin{
+	margin: 0;
+}
+ .bild{
+	height: 50px;
+	width: 80px;
+}
+.no-background{
+	background-color: transparent;
+
+}
+.no-border{
+	border:0;
+}
+.background-grey{
+	background-color: #191919;
+}
+.divider2{
+	height: 1px;
+	background-color: grey;
+}
+
+.footer{
+	margin-top: 20px;
+}
+.divider-text{
+	color: #a0a09f;
+	margin: 0;
+	padding: 0;
+}
+.background-image{
+	text-align: center;
+	background-image: url("https://static.wixstatic.com/media/62fcc7_952fd0b1ea3149838c5ffa91cf817f8e~mv2.jpg/v1/fill/w_1024,h_446,al_c,q_85/62fcc7_952fd0b1ea3149838c5ffa91cf817f8e~mv2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.jumbotron{
+	margin-top: 0px;
+	background-color: transparent;
+}
+
+#second {
+	margin-bottom: 130px;
+}
+.white{
+	color: white;
+}
+
+.rounded-circle{
+	border-radius: 50%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
