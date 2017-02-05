@@ -4,14 +4,21 @@
 <meta charset="utf-8">
     </head>
     <body>
-<form action="login.php" method="POST">
+<form action="logout.php" method="POST">
 
-    <button type="submit">LOGGA UT</button>
+    <button type="submit" name="">LOGGA UT</button>
 </form>
  
- 
- <?php
-session_start();
+<a href="boka.php">Boka här </a>
+
+ <?php require_once("session.php"); 
+
+$_SESSION['message'] = 'Fel inlogg';
+$_SESSION['logged_in'] = $_POST['email'];
+
+
+failed();      
+
 $host = '127.0.0.1'; 
 $db = 'taggadig';
 $user = 'root';
@@ -25,31 +32,34 @@ $options = [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 
 $pdo = new PDO ($dsn, $user, $password, $options);
 
-$_SESSION['username'] = $user;
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $user = $_POST['username'];
+    $user = $_POST['email'];
     $password = $_POST['password'];
     $krypterad = crypt($password, "salt");
         
-    $result = $pdo->prepare($sql = "SELECT * FROM members WHERE username = :uName AND password = :crypt");
-    $result->execute(['uName' => $user, 'crypt' =>$krypterad]);
+    $result = $pdo->prepare($sql = "SELECT * FROM members WHERE email = :mail AND password = :crypt");
+    $result->execute(['mail' => $user, 
+                      'crypt' =>$krypterad]);
     $rows = $result->fetch(PDO::FETCH_NUM);
     if ($rows > 0){
-        echo "hej " . $user;
+        $statement = $pdo->query('SELECT `business` FROM `members`');
+        foreach($statement as $row){
+            $business = $row['business'];
+        }
+        echo "Välkommen " . $business;
         }
     else{
-        
+        $_SESSION['message'];
         header('location: connect.php');
-        echo "Du har inte angett rätt inloggningsuppgifter!!";
+        exit;
         
         }
     }
 
-if(isset($_POST['submit'])){
-    session_destroy();
-    header('location: connect.php');
-}
+// require_once("create.php");
+
 
 ?>
  

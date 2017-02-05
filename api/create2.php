@@ -6,12 +6,12 @@
 </head>
 <body>
     <form action="#" method="POST">
-        <input type="text" name="username" value="" placeholder="Användarnamn" /><br>
+        
         <input type="text" name="business" value="" placeholder="Företag"/><br>
         <input type="text" name="firstName" value="" placeholder="Namn" /><br>
         <input type="text" name="lastName" value="" placeholder="Efternamn"/><br>
         <input type="text" name="email" value="" placeholder="E-post"/><br>
-        <input type="text" name="phone" value="" placeholder="Telefon" /><br>
+        <input type="text" name="phone" value="" placeholder="+46" /><br>
         <input type="password" name="password" value="" placeholder="Lösenord"/><br>
         <input type="password" name="passwordsecond" value="" placeholder="fyll i lösenord igen"/><br>
         <button type="submit">Submit</button>
@@ -22,7 +22,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        $formArr = array('username', 'business', 'firstName', 'lastName', 'email', 'phone', 'password' );
+        $formArr = array('business', 'firstName', 'lastName', 'email', 'phone', 'password' );
         $error = false; 
         foreach($formArr AS $row) { 
           if(!isset($_POST[$row]) || empty($_POST[$row])) {
@@ -30,14 +30,14 @@
             $error = true; 
         }
     }
-
-$phone = $_POST['phone'];
-if(preg_match("/[^0-10]/", $phone)) {
-  // $phone is valid
-}else{
-    echo "$phone is not a valid phonenr.";
-    die();
-}
+// $phonePattern = '0([-\s]?\d){6,10}';
+// $phone = $_POST['phone'];
+// if(preg_match($phonePattern, $phone)) {
+//   // $phone is valid
+// }else{
+//     echo "$phone is not a valid phonenr.";
+//     die();
+// }
 
 $email = $_POST['email'];
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
@@ -62,12 +62,12 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
               if( $antal_rader > 0 ) {
                 echo "Finns redan";
             }else{
-                $sql = "INSERT INTO `members` (`username`, `business`, `firstName`, `lastName`, `email`, `phone`, `password`)
-                VALUES(:uName, :businessName, :fName, :lName, :mail, :tel, :pass)";
+                $sql = "INSERT INTO `members` (`business`, `firstName`, `lastName`, `email`, `phone`, `password`)
+                VALUES( :businessName, :fName, :lName, :mail, :tel, :pass)";
 
 
                 $stm_insert = $pdo -> prepare($sql);
-                $stm_insert -> execute  (['uName' => $_POST['username'],
+                $stm_insert -> execute  ([
                     'businessName' => $_POST['business'],
                     'fName' => $_POST['firstName'],
                     'lName' => $_POST['lastName'],
