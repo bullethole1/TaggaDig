@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  <meta charset="utf-8">
 <meta name="viewport" content="witdth=devicewidth, initial-scale=1">
-<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
-
+<link type="text/css" rel="stylesheet" href="C:\Users\emkar\WebbApps\TaggaDig\style\stylesheet.css"/>
+<link rel="shortcut icon" type="image/x-icon" href=".\img\Head_Logo.ico" />
 	<title>TaggaDig</title>
 
 </head>
@@ -27,7 +27,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img class="bild" src="https://static.wixstatic.com/media/62fcc7_56a3324e9d0a4f94a127fd14d0303fff~mv2.png/v1/fill/w_178,h_110,al_c,lg_1/62fcc7_56a3324e9d0a4f94a127fd14d0303fff~mv2.png"></a>
+            <a href="#"><img id="logo" src=".\img\Logo.png"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right">
@@ -36,89 +36,150 @@
               <li><a href="#">Tjänster</a></li>
               <li><a href="#">Om oss</a></li>
               <li><a href="#">Kontakta oss</a></li>
-            
             </ul>
-            
+
           </div><!--/.nav-collapse -->
           </nav>
           </header>
 
           <div class="background-image">
           <div class="jumbotron">
+        <div class="row">
         <h2 class="white no-margin">LÅT OSS TA HAND OM DIN</h2>
         <h2 id="second" class="white no-margin">MARKNADSFÖRING</h2>
+        </div>
         <p> </p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Boka</a></p>
+        <div class="row">
+        <div class="col-md-4 col-sm-3"></div>
+        <div style="text-align: center" class="col-md-4 col-sm-6" id="login-background">
+          <div class="col-md-12">
+           <input type="text" class="form-control" placeholder="example@mail.com">
+           <input type="text" class="form-control" placeholder="Password" style="margin-top: 3px">
+          </div>
+        <button class="btn btn-lg btn-primary button-style login">Logga in<a  href="#" role="button"></a></button>
+      </div>
+        <div class="col-md-4 col-sm-3"></div>
+        </div>
         <p> </p>
         </div>
       </div>
 
 
-          <div style="text-align: center">
+          <div style="text-align: center"class="row margin-top-bottom">
 
           <!--Columnsizes-->
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div> 
+          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
           <div class="col-md-2 col-sm-4 col-xs-6">
-          	<h1 class=" divider-text">Tjänster</h1>
+          	<h1 class="divider-text">Tjänster</h1>
           </div>
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>		  
+          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+          </div>
           </div>
 
           <div style="text-align: center" class="row">
-        <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+           <div class="col-md-4">
+          <img class="rounded-circle" src=".\img\Monitor.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2 class="header-heigt">Monitor</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-     
+
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
+        <div class="col-md-4">
+          <img class="rounded-circle" src=".\img\CarMonitor.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2 class="header-heigt">Rörlig monitor</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <button class="button"><a href="#" role="button">View details »</a></button>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
+        <div class="col-md-4">
+          <img class="rounded-circle" src=".\img\Map.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2 class="header-heigt">Anpassad Marknadsföring</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-       
         </div><!-- /.col-lg-4 -->
       </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div style="text-align: center" class="row">
+        <button class="button btn btn-primary button-style">Läs mer<a href="#"></a></button>
+      </div>
 
-
-
-
-                    <div style="text-align: center">
+      <div style="display:flex text-align: center" class="row margin-top-bottom">
           <!--Columnsizes-->
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div> 
+          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
           <div class="col-md-2 col-sm-4 col-xs-6">
-          	<h1 class=" divider-text">Om oss</h1>
-          </div>
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>		  
-          </div>
-                    <div style="text-align: center">
-
-          <!--Columnsizes-->
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div> 
-          <div class="col-md-2 col-sm-4 col-xs-6">
-          	<h1 class=" divider-text">Kontakt</h1>
+            <h1 class="divider-text">Om oss</h1>
           </div>
           <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
-          <div>asdga
-          asdfgasdasdsfdgasdfga
-          afgadsfsgadfgadfgad
-          fgadfadthgadfhg
-          adfgadfghadf</div>		  
+        </div>
+        <!--<div style="flex 8 margin: 0"><hr class="divider2"></div>
+        <div>
+          <h1 style="flex 2" class="divider-text">Om oss</h1>
+        </div>
+        <div style="margin: 0"><hr class="divider2"></div>
+      </div>-->
+
+          <div class="row">
+            <div class="col-md-3">
+           </div>
+
+             <div class="col-md-6 section-margin">
+              <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.
+              This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
+            </div>
+             <div class="col-md-3">
+            </div>
+            </div>
+
+          <div style="text-align: center" class="row margin-top-bottom">
+          <!--Columnsizes-->
+         <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <h1 class=" divider-text">Kontakt</h1>
           </div>
+          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+        </div>
 
 
+        <section class="section-margin">
+
+          <section class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+              <p style="font-size: 14px; line-height: 50%;">Kruthusgatan 17</p>
+              <p style="font-size: 14px; line-height: 50%;">411 04 Göteborg</p>
+              <br>
+              <p style="font-size: 14px; line-height: 50%;">info@taggadig.se</p>
+              <p style="font-size: 14px; line-height: 50%;">Tel: 031-456-7890</p>
+            </div>
+            <div class="col-md-3">
+             <input type="text" class="form-control" placeholder="Namn">
+             <input type="text" class="form-control" placeholder="Epost" style="margin-top: 3px">
+             <input type="text" class="form-control" placeholder="Ämne" style="margin-top: 3px">
+           </div>
+           <div class="col-md-3 col-sm-12">
+            <textarea class="form-control" rows="4" placeholder="Meddelande"></textarea>
+            <button class="button btn btn-default btn-sm" style="margin-top: 10px; float: right;" ><a href="#" role="button">Send</a></button>
+          </div>
+            <div class="col-md-2"></div>
+          </section>
+          <section class="row" style="text-align: center">
+            <div>
+              <button class="button btn btn-primary button-style">Tillbaka<a href="#" role="button"></a></button>
+            </div>
+          </section>
+        </section>
 
         </div><!--/.container-fluid -->
 
           <footer class="footer background-grey">
-      		<div class="container">
-        		<p class="text-muted">Place sticky footer content here.</p>
-      		</div>
+          <div class="tagga">
+            <p class="glyphicon glyphicon-copyright-mark">2017 by Tagga dig</p>
+            </div>
+          <div class="socialLogo" >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRbR6TZ2dXFUKkRnzNS1GobbcV6h3sw_P8KNvGDunDOh6VM5Fi">
+            <img src="https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/facebook-256.png">
+            <img src="https://cdn.jbhe.com/wordpress/wp-content/uploads/2016/05/Twitter.png">
+            <img src="https://cdn.zapier.com/storage/services/0199c4681574c7caff88bc8a194fdec8.128x128.png">
+          </div>
     	 </footer>
 
 
