@@ -43,8 +43,17 @@
 	background-size: cover;
 }
 .jumbotron{
-	margin-top: 0px;
+	margin: 0px;
 	background-color: transparent;
+}
+.navbar{
+	margin: 0;
+}
+.active2{
+	background-color: #2C2C2C;
+}
+.active2 a{
+	color: grey!important;
 }
 
 #second {
@@ -84,6 +93,7 @@
 }
 .section-margin{
 	margin-left: 20px;
+	margin-right: 20px;
 }
 .tagga {
 
@@ -103,7 +113,8 @@
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
-.header-heigt{
+.header-style{
 	height: 70px;
+	margin: 0;
 
 }
