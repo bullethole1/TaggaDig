@@ -12,32 +12,37 @@
 <body>
 
 <div class="container-fluid no-padding">
-<header class="background-grey">
-	<nav class="navbar navbar-default no-background no-border">
-      <div class="col-md-2">
+  <!-- Static navbar -->
+  <header class="background-grey">
+  <nav class="navbar navbar-default no-background no-border">
+  <div class="col-md-2">
+  </div>
+    <div class="col-md-8 container-fluid" >
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img id="logo" src=".\img\Logo.png"></a>
       </div>
-        <div class="col-md-8 container-fluid" >
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#">Hem boka</a></li>
-              <li><a href="#">Tjänster</a></li>
-              <li><a href="#">Om oss</a></li>
-              <li><a href="#">Kontakta oss</a></li>
-              <li><a style="color: #3CD3F9" href="#">Admin</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-          </nav>
- </header>
+      <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active2"><a href=".\mainpage.html">Hem</a></li>
+          <li><a href="boka-page.html">Boka</a></li>
+          <li><a href="#">Tjänster</a></li>
+          <li><a href="#">Om oss</a></li>
+          <li><a href="#">Kontakta oss</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+    <div class="col-md-2">
+    </div>
+      </nav>
+      </header>
 
- <section class="jumbotron" style="background-color: #4795C6" id="bokningar">
+ <section class="jumbotron" id="bokningar">
  	<div class="row">
 
  	<div class="col-md-4">
@@ -82,11 +87,11 @@
 <hr class="linje">
 </div>
 
-<section class="container" style="display: inline-flex;">
-            <div class="col-xs-3">
+      <section class="row margin-top-bottom">
+            <div class="col-md-4">
             </div>
-             <div class="col-xs-3">
-             <p>namn:</p>
+             <div class="col-md-4">
+             <p>Namn:</p>
               <input type="text" class="form-control" placeholder="Namn">
               <p style="padding-top: 5px">Företag:</p>
               <input type="text" class="form-control" placeholder="Företag" style="margin-top: 3px">
@@ -95,8 +100,11 @@
               <p style="padding-top: 5px">Telefon:</p>
               <input type="text" class="form-control" placeholder="Telefon" style="margin-top: 3px">
             </div>
-          </section>
+            <div class="col-md-4"></div>
+      </section>
 </div> <!-- container -->
+
+
 <footer class="footer background-grey">
 <div class="tagga">
   <p class="glyphicon glyphicon-copyright-mark">2017 by TaggaDig</p>

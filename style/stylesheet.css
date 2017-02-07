@@ -45,7 +45,9 @@
 	margin: 0px;
 	background-color: transparent;
 }
-
+.navbar-toggle{
+	background-color: #191919!important;
+}
 .navbar-toggle:hover{
 	background-color: #2C2C2C!important;
 }
@@ -127,7 +129,7 @@
 	color: grey;
 }
 .package1{
-
+	padding: 20px;
  height: 250px;
  background-color: #2464AB;
  text-align: center;
@@ -136,6 +138,7 @@
 }
 
 .package2 {
+	padding: 20px;
  height: 250px;
  background-color: #163F6B;
  text-align: center;
@@ -144,15 +147,16 @@
 }
 
 .package3 {
+	padding: 20px;
  height: 250px;
  background-color: #3189EB;
  text-align: center;
  color: white;
- margin-top: 0;
 
 }
 
 .package4 {
+	padding: 20px;
  height: 250px;
  background-color: #2C7AD1;
  text-align: center;
