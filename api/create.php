@@ -21,7 +21,7 @@ else
 else{ if(isset ($_POST['update'])){ //spara ner i sessions
 
             $_SESSION['objekt']['area'] = $_POST['area'];
-            $_SESSION['objekt']['type'] = $_POST['type'];
+            $_SESSION['objekt']['model'] = $_POST['model'];
             $_SESSION['objekt']['firstName'] = $_POST['firstName'];
             $_SESSION['objekt']['lastName'] = $_POST['lastName'];
             $_SESSION['objekt']['email'] = $_POST['email'];
@@ -31,14 +31,15 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
             $_SESSION['objekt']['upFile'] = $_FILES['upFile'];
 
 //hämta info ifrån produkter och pris
-    $sql = "SELECT *  FROM `products` WHERE `area` = :arean";
+
+    $sql = "SELECT *  FROM `products` WHERE `area` = :arean AND `status` = 1";
     $stm_price = $pdo -> prepare($sql); 
     $stm_price -> execute ([ 'arean' => $_POST['area'] ]);
     foreach($stm_price as $row){
         $price = $row['price'];
         $area = $row['area'];
-        $model = $row['type'];
-    echo "Order: <br>";
+        $model = $row['model'];
+    // echo "Order: <br>";
     echo "Pris: $price<br>";
     echo "Område: $area<br>";
      echo "Model: $model<br>";
@@ -52,11 +53,11 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
 
 // if(isset($_POST['confirm'])){
 
-            $sql = "INSERT INTO `orders` (`area`, `type`, `firstName`, `lastName`, `email`, `phoneNumber`, `businessName`, `description`, `upFile`)
+            $sql = "INSERT INTO `orders` (`area`, `model`, `firstName`, `lastName`, `email`, `phoneNumber`, `businessName`, `description`, `upFile`)
             VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stm_insert = $pdo -> prepare($sql);
             $stm_insert->bindParam(1, $_SESSION['objekt']['area']);
-            $stm_insert->bindParam(2, $_SESSION['objekt']['type']);
+            $stm_insert->bindParam(2, $_SESSION['objekt']['model']);
             $stm_insert->bindParam(3, $_SESSION['objekt']['firstName']);
             $stm_insert->bindParam(4, $_SESSION['objekt']['lastName']);
             $stm_insert->bindParam(5, $_SESSION['objekt']['email']);
@@ -87,7 +88,7 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
 <input list="areas" name="area" value="" placeholder="Område" /><br>
   <datalist id="areas">
   <?php
-  $result = $pdo->query("SELECT `area` FROM `products` ");
+  $result = $pdo->query("SELECT `area` FROM `products` GROUP BY `area` ");
    foreach($result as $row){
        $area = $row['area'];
          echo "<option value=\"$area\">";
@@ -95,11 +96,11 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
 
 ?>
   </datalist>
-  <input list="type" name="type" value="" placeholder="Model" /><br>
-  <datalist id="type">
-  <?php        $result = $pdo->query("SELECT `type` FROM `products` GROUP BY `type` ");
+  <input list="model" name="model" value="" placeholder="Model" /><br>
+  <datalist id="model">
+  <?php        $result = $pdo->query("SELECT `model` FROM `products` GROUP BY `model` ");
    foreach($result as $row){
-       $model = $row['type'];
+       $model = $row['model'];
          echo "<option value=\"$model\">";
    }
    ?>
