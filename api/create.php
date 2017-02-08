@@ -156,3 +156,4 @@ echo "<br>";
     <input type="file" name="upFile" value="" placeholder="Ladda up fil" /><br>
 
    <button type="submit" name="update">Boka</button>
+   
