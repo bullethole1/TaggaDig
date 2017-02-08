@@ -1,7 +1,9 @@
-    <!DOCTYPE html>
-  <?php
+<?php
 include_once('database.php');
+require_once("session.php"); 
+failed();
 ?>  
+<!DOCTYPE html>
 <html>
     <head>
 <meta charset="utf-8">
@@ -22,6 +24,8 @@ include_once('database.php');
 
 
 <?php
+$_SESSION['logged_in'];
+$_SESSION['logged_in'] = $_POST['email']; 
 
 if(isset($_POST['update'])) {	
     
