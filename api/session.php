@@ -16,11 +16,12 @@ return $output;
 // OM man inte är inloggad skicka tillbaka till connect.php
 function  failed(){
     if(!isset ($_SESSION['logged_in']) ){
- header("Location: connect.php");
-          exit;
-}
-   
+        header("Location: connect.php");
+        exit;
+    }
 }
 
-
-?>
+function json($data) {
+    header('Content-Type: application/json');
+    echo json_encode($data);
+}

@@ -16,4 +16,29 @@
     echo 'Connection failed: ' . $e->getMessage();
 }
 
+// class Member {
+// 	public $area;
+// 	public $first_name;
+// 	public $last_name;
+// 	private $pdo;
+
+// 	public function __construct(PDO $pdo) {
+// 		$this->pdo = $pdo;
+// 	}
+// 	public function getName() {
+// 		return $this->first_name." ".$this->last_name;
+// 	}
+
+// 	public function save() {
+
+// 	}
+// }
+
+// $first_name  = "Lisa";
+// $first_name2 = "Marcus";
+// $lisa = new Member();
+// $marcus = new Member();
+// $lisa->first_name = "Lisa";
+// $lisa->getName();
+// $lisa->save();
 ?>

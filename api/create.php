@@ -3,16 +3,13 @@
     include_once('database.php');
     require_once("session.php"); 
     failed();     // kom inte åt försen inlogg
-  
-
-        
-
 
 if(!isset($_FILES['upFile']['tmp_name']) )
     echo "";
 else
 {
   $image = base64_encode(@file_get_contents( $_FILES['upFile']['tmp_name']));
+  
 //   $image_name = addslashes($_FILES['upFile']['name']);  
   $image_size = @getimagesize($_FILES['upFile']['tmp_name']);
 
@@ -76,19 +73,18 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
 }
      
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
 </head>
 <body>
+
 <form action="#" method="POST" enctype="multipart/form-data">
 <input list="areas" name="area" value="" placeholder="Område" /><br>
   <datalist id="areas">
   <?php
-  $result = $pdo->query("SELECT `area` FROM `products` GROUP BY `area` ");
+  $result = $pdo->query("SELECT `area` FROM `products` WHERE `status` = 1 GROUP BY `area` ");
    foreach($result as $row){
        $area = $row['area'];
          echo "<option value=\"$area\">";
