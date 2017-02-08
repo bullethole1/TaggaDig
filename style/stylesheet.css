@@ -28,7 +28,6 @@
 }
 
 .footer{
-	margin-top: 20px;
 	padding: 30px;
 }
 .divider-text{
@@ -45,6 +44,12 @@
 .jumbotron{
 	margin: 0px;
 	background-color: transparent;
+}
+.navbar-toggle{
+	background-color: #191919!important;
+}
+.navbar-toggle:hover{
+	background-color: #2C2C2C!important;
 }
 .navbar{
 	margin: 0;
@@ -96,7 +101,6 @@
 	margin-right: 20px;
 }
 .tagga {
-
 	text-align: center;
 	color: grey;
 }
@@ -116,5 +120,46 @@
 .header-style{
 	height: 70px;
 	margin: 0;
+
+}
+.attvälja {
+
+	background-color: white;
+	text-align: center;
+	color: grey;
+}
+.package1{
+	padding: 20px;
+ height: 250px;
+ background-color: #2464AB;
+ text-align: center;
+ color: white;
+
+}
+
+.package2 {
+	padding: 20px;
+ height: 250px;
+ background-color: #163F6B;
+ text-align: center;
+ color: white;
+
+}
+
+.package3 {
+	padding: 20px;
+ height: 250px;
+ background-color: #3189EB;
+ text-align: center;
+ color: white;
+
+}
+
+.package4 {
+	padding: 20px;
+ height: 250px;
+ background-color: #2C7AD1;
+ text-align: center;
+ color: white;
 
 }
