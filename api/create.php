@@ -1,22 +1,23 @@
 <?php 
-    
+    //ob_start();
     include_once('database.php');
     require_once("session.php"); 
     failed();     // kom inte åt försen inlogg
+  
 
 if(!isset($_FILES['upFile']['tmp_name']) )
     echo "";
 else
 {
   $image = base64_encode(@file_get_contents( $_FILES['upFile']['tmp_name']));
-  
 //   $image_name = addslashes($_FILES['upFile']['name']);  
   $image_size = @getimagesize($_FILES['upFile']['tmp_name']);
 
   if($image_size == FALSE)
   echo "Försök igen";
-else{ if(isset ($_POST['update'])){ //spara ner i sessions
 
+else{ if(isset ($_POST['update'])){ //spara ner i sessions
+            
             $_SESSION['objekt']['area'] = $_POST['area'];
             $_SESSION['objekt']['model'] = $_POST['model'];
             $_SESSION['objekt']['firstName'] = $_POST['firstName'];
@@ -27,8 +28,12 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
             $_SESSION['objekt']['description'] = $_POST['description'];
             $_SESSION['objekt']['upFile'] = $_FILES['upFile'];
 
-//hämta info ifrån produkter och pris
 
+   $stmt_status = $pdo->prepare('UPDATE `products` SET `status` = 0  WHERE `id` = :uid');
+  $stmt_status->execute(['uid' => $_POST['area']]);
+    
+
+    //hämta info ifrån produkter och pris
     $sql = "SELECT *  FROM `products` WHERE `area` = :arean AND `status` = 1";
     $stm_price = $pdo -> prepare($sql); 
     $stm_price -> execute ([ 'arean' => $_POST['area'] ]);
@@ -36,7 +41,7 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
         $price = $row['price'];
         $area = $row['area'];
         $model = $row['model'];
-    // echo "Order: <br>";
+    echo "Order: <br>";
     echo "Pris: $price<br>";
     echo "Område: $area<br>";
      echo "Model: $model<br>";
@@ -81,17 +86,19 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
 <body>
 
 <form action="#" method="POST" enctype="multipart/form-data">
-<input list="areas" name="area" value="" placeholder="Område" /><br>
-  <datalist id="areas">
+<select id="areas" name="area" value="" placeholder="Område" /><br>
+  
   <?php
-  $result = $pdo->query("SELECT `area` FROM `products` WHERE `status` = 1 GROUP BY `area` ");
+  $result = $pdo->query("SELECT `area`, `id` FROM `products`");
    foreach($result as $row){
        $area = $row['area'];
-         echo "<option value=\"$area\">";
+       $id = $row['id'];
+         echo "<option value=\"$id\">$area</option>";
+        
    }
 
 ?>
-  </datalist>
+  </select>
   <input list="model" name="model" value="" placeholder="Model" /><br>
   <datalist id="model">
   <?php        $result = $pdo->query("SELECT `model` FROM `products` GROUP BY `model` ");
@@ -110,9 +117,3 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
     <input type="file" name="upFile" value="" placeholder="Ladda up fil" /><br>
 
    <button type="submit" name="update">Boka</button>
-</form>
-   
-
-
-</body>
-</html>
