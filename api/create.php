@@ -29,8 +29,8 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
             $_SESSION['objekt']['upFile'] = $_FILES['upFile'];
 
 
-   $stmt_status = $pdo->prepare('UPDATE `products` SET `status` = 0  WHERE `id` = :uid');
-  $stmt_status->execute(['uid' => $_POST['area']]);
+ // $stmt_status = $pdo->prepare('UPDATE `products` SET `status` = 0  WHERE `id` = :uid');
+ // $stmt_status->execute(['uid' => $_POST['area']]);
     
 
     //hämta info ifrån produkter och pris
@@ -86,8 +86,8 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
 <body>
 
 <form action="#" method="POST" enctype="multipart/form-data">
-<select id="areas" name="area" value="" placeholder="Område" /><br>
-  
+<input id="areas" name="area" value="" placeholder="Område" /><br>
+ <datalist id="areas"> 
   <?php
   $result = $pdo->query("SELECT `area`, `id` FROM `products`");
    foreach($result as $row){
@@ -98,7 +98,7 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
    }
 
 ?>
-  </select>
+  </datalist>
   <input list="model" name="model" value="" placeholder="Model" /><br>
   <datalist id="model">
   <?php        $result = $pdo->query("SELECT `model` FROM `products` GROUP BY `model` ");
