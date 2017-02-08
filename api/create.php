@@ -31,27 +31,11 @@ if(isset ($_POST['update'])){ //spara ner i sessions
             $_SESSION['objekt']['upFile'] = $_FILES['upFile'];
 
 
- // $stmt_status = $pdo->prepare('UPDATE `products` SET `status` = 0  WHERE `id` = :uid');
- // $stmt_status->execute(['uid' => $_POST['area']]);
+   $stmt_status = $pdo->prepare('UPDATE `products` SET `status` = 0  WHERE `id` = :uid');
+  $stmt_status->execute(['uid' => $_POST['area']]);
     
 
     //hämta info ifrån produkter och pris
-<<<<<<< HEAD
-    $sql = "SELECT *  FROM `products` WHERE `area` = :arean AND `status` = 1";
-    $stm_price = $pdo -> prepare($sql); 
-    $stm_price -> execute ([ 'arean' => $_POST['area'] ]);
-    foreach($stm_price as $row){
-        $price = $row['price'];
-        $area = $row['area'];
-        $model = $row['model'];
-    echo "Order: <br>";
-    echo "Pris: $price<br>";
-    echo "Område: $area<br>";
-     echo "Model: $model<br>";  
-//     echo "<form action=\"#\" method=\"POST\">
-// <button type=\"submit\" name=\"confirm\"> Bekräfta </button>
-// </form>";
-=======
    
 $sql_order = "SELECT `price`, `area`, `model`  FROM `products` WHERE `area` = :arean AND `status` = 1";
 $row=$pdo->prepare($sql_order);
@@ -78,7 +62,6 @@ echo json_encode($main_order);
     // echo "Område: $area<br>";
     //  echo "Model: $model<br>";
 
->>>>>>> 2fd7a8b38e3c8d559d2b466e0391080209414de7
 
  
 //     }  
@@ -116,14 +99,9 @@ echo json_encode($main_order);
 <body>
 
 <form action="#" method="POST" enctype="multipart/form-data">
-<<<<<<< HEAD
-<input id="areas" name="area" value="" placeholder="Område" /><br>
- <datalist id="areas"> 
-=======
 <!--<input list="areas" name="area" value="" placeholder="Område" /><br>
  <datalist id="areas">
  -->
->>>>>>> 2fd7a8b38e3c8d559d2b466e0391080209414de7
   <?php
 // hämta area 
 $sql_area = "SELECT `area`, `id` FROM `products` WHERE `status` = 1";
@@ -148,15 +126,6 @@ echo "<br>";
 
 ?>
   </datalist>
-<<<<<<< HEAD
-  <input list="model" name="model" value="" placeholder="Model" /><br>
-  <datalist id="model">
-  <?php        $result = $pdo->query("SELECT `model` FROM `products` GROUP BY `model` ");
-   foreach($result as $row){
-       $model = $row['model'];
-         echo "<option value=\"$model\">";
-   }
-=======
  <!-- <input list="model" name="model" value="" placeholder="Model" /><br>
   <datalist id="model"> 
  -->  
@@ -176,7 +145,6 @@ echo "<br>";
 //        $model = $row['model'];
 //          echo "<option value=\"$model\">";
 //    }
->>>>>>> 2fd7a8b38e3c8d559d2b466e0391080209414de7
    ?>
   </datalist>
  <input type="text" name="firstName" value="" placeholder="Namn" /><br>
