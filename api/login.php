@@ -16,7 +16,7 @@
  <?php require_once("session.php"); 
 
 $_SESSION['message'] = 'Fel inlogg';
-$_SESSION['logged_in'] = $_POST['email'];
+$_SESSION['logged_in'] = $_POST['email']; 
 
 
 failed();      
