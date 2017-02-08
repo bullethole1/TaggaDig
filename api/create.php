@@ -44,7 +44,7 @@ else{ if(isset ($_POST['update'])){ //spara ner i sessions
     echo "Order: <br>";
     echo "Pris: $price<br>";
     echo "Område: $area<br>";
-     echo "Model: $model<br>";
+     echo "Model: $model<br>";  
 //     echo "<form action=\"#\" method=\"POST\">
 // <button type=\"submit\" name=\"confirm\"> Bekräfta </button>
 // </form>";
