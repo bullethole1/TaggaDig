@@ -1,9 +1,25 @@
+#tjänster{
+
+}
+#om-oss{
+
+}
+#kontakt{
+	
+}
+.button{
+
+}
+
 .red {
 
 	background-color: red;
 }
 .no-padding{
 	padding: 0;
+}
+.no-margin-top{
+	margin-top: 0;
 }
 .no-margin{
 	margin: 0;
@@ -60,6 +76,9 @@
 .active2 a{
 	color: grey!important;
 }
+.username-header{
+	color:#3189EB!important;
+}
 
 #second {
 	margin-bottom: 130px;
@@ -113,6 +132,9 @@
   background: rgba(255, 255, 255, .7);
 }
 .login{
+
+}
+.login-frontpage{
 	margin: 0 auto;
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -122,9 +144,10 @@
 	margin: 0;
 
 }
-.attvälja {
-
-	background-color: white;
+.align-center{
+	text-align: center;
+}
+.heading-style{
 	text-align: center;
 	color: grey;
 }

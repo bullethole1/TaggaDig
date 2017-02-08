@@ -31,11 +31,13 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active2"><a href=".\mainpage.html">Hem</a></li>
-              <li><a href="boka-page.html">Boka</a></li>
-              <li><a href="#">Tjänster</a></li>
-              <li><a href="#">Om oss</a></li>
-              <li><a href="#">Kontakta oss</a></li>
+              <li class="button active2"><a href="#">Hem</a></li>
+              <li class="button"><a href="#">Boka</a></li>
+              <li class="button"><a href="#">Tjänster</a></li>
+              <li class="button"><a href="#">Om oss</a></li>
+              <li class="button"><a href="#">Kontakta oss</a></li>
+              <li class="button"><a class="login" href="#">Logga in</a></li>
+              <li><a class="username-header" href="#">Inloggad som</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -53,12 +55,12 @@
         <p> </p>
         <div class="row">
         <div class="col-md-4 col-sm-3"></div>
-        <div style="text-align: center" class="col-md-4 col-sm-6" id="login-background">
+        <div class="align-center col-md-4 col-sm-6" id="login-background">
           <div class="col-md-12">
            <input type="text" class="form-control" placeholder="example@mail.com">
            <input type="text" class="form-control" placeholder="Password" style="margin-top: 3px">
           </div>
-        <button class="btn btn-lg btn-primary button-style login">Logga in<a  href="#" role="button"></a></button>
+        <button class="button btn btn-lg btn-primary button-style login-frontpage login">Logga in<a  href="#" role="button"></a></button>
       </div>
         <div class="col-md-4 col-sm-3"></div>
         </div>
@@ -67,18 +69,18 @@
       </div>
 
 
-          <div style="text-align: center"class="row margin-top-bottom">
+          <div class="align-center row margin-top-bottom">
 
           <!--Columnsizes-->
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+          <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
           <div class="col-md-2 col-sm-4 col-xs-6">
-          	<h1 class="divider-text">Tjänster</h1>
+          	<h1 id="tjänster" class="divider-text">Tjänster</h1>
           </div>
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+          <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
           </div>
           </div>
 
-          <div style="text-align: center" class="row">
+          <div class="row align-center">
             <div class="col-md-2"></div>
             <div class="col-md-8">
            <div class="col-md-4">
@@ -100,24 +102,18 @@
       </div>
         <div class="col-md-2"></div>
       </div>
-      <div style="text-align: center" class="row">
+      <div class="row align-center">
         <button class="button btn btn-primary button-style">Läs mer<a href="#"></a></button>
       </div>
 
-      <div style="text-align: center" class="row margin-top-bottom">
+      <div class="align-center row margin-top-bottom">
           <!--Columnsizes-->
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+          <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
           <div class="col-md-2 col-sm-4 col-xs-6">
-            <h1 class="divider-text">Om oss</h1>
+            <h1 id="om-oss" class="divider-text">Om oss</h1>
           </div>
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+          <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
         </div>
-        <!--<div style="flex 8 margin: 0"><hr class="divider2"></div>
-        <div>
-          <h1 style="flex 2" class="divider-text">Om oss</h1>
-        </div>
-        <div style="margin: 0"><hr class="divider2"></div>
-      </div>-->
 
           <div class="row">
             <div class="col-md-3">
@@ -131,13 +127,13 @@
             </div>
             </div>
 
-          <div style="text-align: center" class="row margin-top-bottom">
+          <div class="row align-center margin-top-bottom">
           <!--Columnsizes-->
-         <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+         <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
           <div class="col-md-2 col-sm-4 col-xs-6">
-            <h1 class=" divider-text">Kontakt</h1>
+            <h1 id="kontakt" class=" divider-text">Kontakt</h1>
           </div>
-          <div style="margin: 0" class="col-md-5 col-sm-4 col-xs-3 no-padding"><hr class="divider2"></div>
+          <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
         </div>
 
 
@@ -163,7 +159,7 @@
           </div>
             <div class="col-md-2"></div>
           </section>
-          <section class="row" style="text-align: center">
+          <section class="row align-center">
             <div>
               <button class="button btn btn-primary button-style">Tillbaka<a href="#" role="button"></a></button>
             </div>
@@ -189,5 +185,6 @@
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src=".\script\mainscript.js"></script>
 </body>
 </html>
