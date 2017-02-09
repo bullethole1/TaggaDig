@@ -1,6 +1,7 @@
-<?php 
- require_once("session.php"); 
- include_once('database.php');
+<?php
+
+require_once "session.php";
+include_once 'database.php';
 ?>
  <!DOCTYPE html>
 <html>
@@ -15,37 +16,30 @@
  
 <a href="boka.php">Boka här </a>
 
-<?php
-
+<?php 
 $_SESSION['message'] = 'Fel inlogg';
-$_SESSION['logged_in'] = $_POST['email']; 
-
-
-failed();      
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+$_SESSION['logged_in'] = $_POST['email'];
+failed();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $_POST['email'];
     $password = $_POST['password'];
     $krypterad = crypt($password, "salt");
-$sql = "SELECT `business`, id  FROM members WHERE email = :mail AND password = :crypt";
-$row=$pdo->prepare($sql);
-$row->execute(['mail' => $user, 
-            'crypt' =>$krypterad]);
-$result=$row->fetchAll(PDO::FETCH_ASSOC);
-$main = array('data'=>$result);
-$_SESSION['userid'] = $result[0]['id'];
-// echo $result[0]['id'];
-
-echo json_encode($main); 
+    $sql = "SELECT `business`, id , email FROM members WHERE email = :mail AND password = :crypt";
+    $row = $pdo->prepare($sql);
+    $row->execute(['mail' => $user, 'crypt' => $krypterad]);
+    $result = $row->fetchAll(\PDO::FETCH_ASSOC);
+    $main = array('data' => $result);
+    $_SESSION['userid'] = $result[0]['id'];
+    // $_SESSION['mail'] = $result[0]['email'];
+    // echo $result[0]['id'];
+    echo json_encode($main);
 }
-
 // if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 //     $user = $_POST['email'];
 //     $password = $_POST['password'];
 //     $krypterad = crypt($password, "salt");
-        
 //     $result = $pdo->prepare($sql = "SELECT * FROM members WHERE email = :mail AND password = :crypt");
-//     $result->execute(['mail' => $user, 
+//     $result->execute(['mail' => $user,
 //                       'crypt' =>$krypterad]);
 //     $rows = $result->fetch(PDO::FETCH_NUM);
 //     if ($rows > 0){
@@ -59,13 +53,9 @@ echo json_encode($main);
 //         $_SESSION['message'];
 //         header('location: connect.php');
 //         exit;
-        
 //         }
 //     }
-
 // require_once("create.php");
-
-
 ?>
  
 </body>
