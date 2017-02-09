@@ -28,9 +28,6 @@ $main_order = array('data'=> $resultat);
 echo json_encode($main_order);
 
 
-
-
-
 if(isset($_POST['delete_order'])){
     $sql = "DELETE FROM `orders`  WHERE `orders` . `orderNr` = :id";
 $stm_delete = $pdo->prepare($sql);

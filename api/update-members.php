@@ -1,7 +1,9 @@
 <?php
 include_once('database.php');
 require_once("session.php"); 
+
 failed();
+
 ?>  
 <!DOCTYPE html>
 <html>
@@ -10,8 +12,6 @@ failed();
     </head>
     <body>
 <form action="#" method="POST">
-    <input type="text" name="id" value="" placeholder="id" /><br>
-    <input type="text" name="username" value="" placeholder="Användarnamn" /><br>
     <input type="text" name="business" value="" placeholder="Företag"/><br>
     <input type="text" name="firstName" value="" placeholder="Namn" /><br>
     <input type="text" name="lastName" value="" placeholder="Efternamn"/><br>
@@ -24,18 +24,27 @@ failed();
 
 
 <?php
-$_SESSION['logged_in'];
-$_SESSION['logged_in'] = $_POST['email']; 
+// $_SESSION['email'] = 'email';
+// $_SESSION['logged_in'];
+// $_SESSION['logged_in'] = $_POST['email']; 
+// if ($_SESSION['email'] =  $_POST['email']) {
+//     $_SESSION['loggedin'] = true;
+//     $_SESSION['email'] = $email; // $username coming from the form, such as $_POST['username']
+//                                        // something like this is optional, of course
+// }
+// if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+//     echo "Welcome to the member's area, " . $_SESSION['email'] . "!";
+// } else {
+//     echo "Please log in first to see this page.";
+// }
+// if(isset($_SESSION['userid'])){
+//     echo $_SESSION['userid'];
+// }
 
+ var_dump($_SESSION['userid']);
 if(isset($_POST['update'])) {	
-    
-    
-    if (isset($_POST['username'])&& strlen($_POST['username']) > 0) {
-                    $updateStm = $pdo->prepare("UPDATE `members` SET `username` = :username WHERE `id`= :id");
-                    $updateStm->execute(['username' => $_POST['username'], 'id' => $_POST['id']]);
-                    echo "username uppdat.";
-                    echo "<br>";
-    }
+  
+
     if (isset($_POST['business'])&& strlen($_POST['business']) > 0) {
                     $updateStm = $pdo->prepare("UPDATE `members` SET `business` = :business WHERE `id`= :id");
                     $updateStm->execute(['business' => $_POST['business'], 'id' => $_POST['id']]);
@@ -88,6 +97,8 @@ if(isset($_POST['update'])) {
                         
     };
 }
+
+
 ?>
 
 

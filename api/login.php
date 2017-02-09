@@ -25,12 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $user = $_POST['email'];
     $password = $_POST['password'];
     $krypterad = crypt($password, "salt");
-$sql = "SELECT `business` FROM members WHERE email = :mail AND password = :crypt";
+$sql = "SELECT `business`, `id`  FROM members WHERE email = :mail AND password = :crypt";
 $row=$pdo->prepare($sql);
 $row->execute(['mail' => $user, 
             'crypt' =>$krypterad]);
 $result=$row->fetchAll(PDO::FETCH_ASSOC);
 $main = array('data'=>$result);
+$_SESSION['userid'] = $result['id'];
 
 echo json_encode($main); 
 }
