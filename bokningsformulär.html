@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <meta charset="utf-8">
+  <meta name="viewport" content="witdth=devicewidth, initial-scale=1">
+  <link type="text/css" rel="stylesheet" href=".\style\stylesheet.css"/>
+  <link rel="shortcut icon" type="image/x-icon" href=".\img\Head_Logo.ico" />
+  	<title>TaggaDig</title>
+</head>
+<body class="bookingBackground">
+
+<div class="container-fluid no-padding">
+  <!-- Static navbar -->
+  <header class="background-grey">
+  <nav class="navbar navbar-default no-background no-border">
+  <div class="col-md-2">
+  </div>
+    <div class="col-md-8 container-fluid" >
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img id="logo" src=".\img\Logo.png"></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active2"><a href=".\mainpage.html">Hem</a></li>
+          <li><a href="boka-page.html">Boka</a></li>
+          <li><a href="#">Tjänster</a></li>
+          <li><a href="#">Om oss</a></li>
+          <li><a href="#">Kontakta oss</a></li>
+          <li><a href="#">Logga ut</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+    <div class="col-md-2">
+    </div>
+      </nav>
+      </header>
+
+<div class="align-center row margin-top-bottom">
+          <!--Columnsizes-->
+          <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
+          <div class="col-md-2 col-sm-4 col-xs-6">
+            <h1 id="tjänster" class="divider-text" style="color: #2E2E2E">Bokningar</h1>
+          </div>
+          <div class="col-md-5 col-sm-4 col-xs-3 no-margin o-padding"><hr class="divider2"></div>
+</div>
+
+
+<div class="container"> <!--/mina Tabeller-->
+<div class="col-md-3"></div>
+
+<div class="col-md-6 ramForBooking" id="login-background">
+<div class="form-group">
+  <label><p class="textSize">Område:</p></label>
+  <input type="text" class="form-control borderField">
+</div>
+
+<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle borderField" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret borderField"></span>
+  </button>
+  <ul class="dropdown-menu borderField">
+    <li><a href="#">Display</a></li>
+    <li><a href="#">Mobile</a></li>
+  </ul>
+</div>
+
+<div class="form-group">
+  <label><p class="textSize">Storlek:</p></label>
+  <input type="text" class="form-control borderField">
+</div>
+
+<div class="form-group">
+  <label><p class="textSize">Räckvid:</p></label>
+  <input type="text" class="form-control borderField">
+</div>
+
+<div class="form-group">
+  <label><p class="textSize">Pris:</p></label>
+  <input type="text" class="form-control borderField">
+</div>
+
+<div>
+<label for="meeting">Välj datum:</label>
+<input id="meeting" type="date"/>
+</div>
+
+<div class="form-group">
+  <label><p class="textSize">Status:</p></label>
+</div>
+
+
+
+<div class="form-group">
+  <label><p class="textSize">Storlek:</p></label>
+  <input type="text" class="form-control borderField">
+</div>
+
+</div> <!--/col-md-6-->
+
+<div class="col-md-3"></div>
+
+
+</div> <!--/mina Tabeller-->
+
+
+
+<footer class="footer background-grey">
+<div class="tagga">
+  <p class="glyphicon glyphicon-copyright-mark">2017 by TaggaDig</p>
+  </div>
+<div class="socialLogo" >
+  <a href="https://www.google.se/maps/place/G%C3%B6teborg/@57.701646,11.6128242,10z/data=!3m1!4b1!4m5!3m4!1s0x464f8e67966c073f:0x4019078290e7c40!8m2!3d57.70887!4d11.97456?hl=sv"><img src=".\img\Google_Maps_logo.png"></a>
+  <a href="https://facebook.com/"><img src=".\img\Facebook_logo.png"></a>
+  <a href="https://twitter.com/"><img src=".\img\Twitter_logo.png"></a>
+  <a href="https://plus.google.com/"><img src=".\img\Google_Plus_logo.png"></a>
+</div>
+</footer>
+
+
+</div> <!-- container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#book").on('input', function() {
+      console.log("funkar");
+      $("#box").append("<p>testar</p>");
+
+
+    });
+
+    // väljer datum
+    //
+
+
+  });
+</script>
+</body>
+</html>
