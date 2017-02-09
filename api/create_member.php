@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
         <input type="password" name="password" value="" placeholder="Lösenord"/><br>
         <input type="password" name="passwordsecond" value="" placeholder="fyll i lösenord igen"/><br>
         <button type="submit">Submit</button>
-    </form>
+    </form> -->
 
     <?php
     include_once('database.php');
@@ -26,25 +26,18 @@
         $error = false; 
         foreach($formArr AS $row) { 
           if(!isset($_POST[$row]) || empty($_POST[$row])) {
-            echo $row.' saknas<br />'; 
+            // echo $row.' saknas<br />'; 
             $error = true; 
         }
     }
-// $phonePattern = '0([-\s]?\d){6,10}';
-// $phone = $_POST['phone'];
-// if(preg_match($phonePattern, $phone)) {
-//   // $phone is valid
-// }else{
-//     echo "$phone is not a valid phonenr.";
-//     die();
-// }
+
 
 $email = $_POST['email'];
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
   
 } else {
   
-  echo("$email is not a valid email address");
+//   echo("$email is not a valid email address");
     die();
 }
 
@@ -60,7 +53,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                   $antal_rader = $row['antal_rader'];
               }
               if( $antal_rader > 0 ) {
-                echo "Finns redan";
+                // echo "Finns redan";
             }else{
                 $sql = "INSERT INTO `members` (`business`, `firstName`, `lastName`, `email`, `phone`, `password`)
                 VALUES( :businessName, :fName, :lName, :mail, :tel, :pass)";
@@ -75,12 +68,12 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                     'tel' => $_POST['phone'],
                     'pass' =>  crypt($_POST['password'], "salt")
                      ]);
-                echo "Registrerad";
+                // echo "Registrerad";
             }
         }
     }
 }else {
-    echo "lösenord matchar ej";
+    // echo "lösenord matchar ej";
 }
 
 }
