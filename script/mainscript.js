@@ -19,7 +19,7 @@ $(document).ready(function(){
     }
     else if(button === 'Tjänster'){
       if(pageName === "boka-page.html"){
-        window.location = "./mainpage.html";
+        window.location = "./index.html";
         localStorage.setItem('offsetName', '#tjänster');
         return;
       }
@@ -27,7 +27,7 @@ $(document).ready(function(){
     }
     else if(button === 'Om oss'){
       if(pageName === "boka-page.html"){
-        window.location = "./mainpage.html";
+        window.location = "./index.html";
         localStorage.setItem('offsetName', '#om-oss');
         return;
       }
@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
     else if(button === 'Kontakta oss'){
       if(pageName === "boka-page.html"){
-        window.location = "./mainpage.html";
+        window.location = "./index.html";
         localStorage.setItem('offsetName', '#kontakt');
         return;
       }
