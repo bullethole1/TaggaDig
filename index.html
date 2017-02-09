@@ -10,7 +10,7 @@
 <link rel="shortcut icon" type="image/x-icon" href=".\img\Head_Logo.ico" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href=".\jquery-ui\jquery-ui.min.css">
-<script src=".\external/jquery/jquery.js"></script>
+<script src=".\external\jquery\jquery.js"></script>
 <script src=".\jquery-ui\jquery-ui.min.js"></script>
 	<title>TaggaDig</title>
 
@@ -41,6 +41,7 @@
               <li class="button"><a href="#">Om oss</a></li>
               <li class="button"><a href="#">Kontakta oss</a></li>
               <li class="button"><a class="login" href="#">Logga in</a></li>
+              <li id="register"><a href="#">Registrera</a></li>
               <li><a class="username-header" href="#">Inloggad som</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -49,6 +50,59 @@
         </div>
           </nav>
           </header>
+
+          <div id="registerform" title="REGISTRERING">
+            <form>
+              <fieldset>
+               <label>Förnamn:</label>
+               <br>
+               <input type="text" name="firstName" value="" placeholder="Förnamn"/><br>
+               <br>
+               <br>
+               <label>Efternamn:</label>
+               <br>
+               <input type="text" name="lastName" value="" placeholder="Efternamn"/><br>
+               <br>
+               <br>
+               <label>Email:</label>
+               <br>
+               <input type="text" name="email" value="" placeholder="Epost" /><br>
+               <br>
+               <br>
+               <label>Telefonnr:</label>
+               <br>
+               <input type="text" name="phoneNumber" value="" placeholder="Telefonnr"/><br>
+               <br>
+               <br>
+               <label>Företagsnamn:</label>
+               <br>
+               <input type="text" name="businessName" value="" placeholder="Företagsnman"/><br>
+               <br>
+               <br>
+               <label>Lösenord:</label>
+               <br>
+               <input type="text" name="password" value="" placeholder="Lösenord"/><br>
+               <br>
+               <label>Upprepa lösenord:</label>
+               <br>
+               <input type="text" name="password" value="" placeholder="Lösenord"/><br>
+               <br>
+               <br>
+               <label>Beskrivning:</label>
+               <br>
+               <input type="text" id="desc" name="description" value="" placeholder="Beskrivning" /><br>
+               <br>
+               <br>
+               <label>Fil uppladdning</label>
+               <br>
+               <input type="file" id="myFile">
+               <br>
+               <br>
+               <br>
+          <button type="button">Registrera</button>
+          </fieldset>
+          </form>
+          </div>
 
           <div class="background-image">
           <div class="jumbotron">
@@ -191,5 +245,6 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src=".\script\mainscript.js"></script>
+<script src=".\script\map-script.js"></script>
 </body>
 </html>
