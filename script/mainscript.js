@@ -4,10 +4,11 @@ $(document).ready(function(){
     $('html, body').animate({scrollTop: $(offsetName).offset().top}, 2000)
       localStorage.removeItem("offsetName");
   }
-  console.log(offsetName);
 
 
   var pageName = getCurentFileName();
+  console.log(pageName);
+
   $(".button").click(function(e){
     var button = $(this).text();
     if(button === 'Hem'){
@@ -17,25 +18,25 @@ $(document).ready(function(){
       window.location = "./boka-page.html";
     }
     else if(button === 'Tjänster'){
-      if(pageName === "boka-page.html"){
-        window.location = "./index.html";
+      if(pageName !== "index.html"){
         localStorage.setItem('offsetName', '#tjänster');
+        window.location = "./index.html";
         return;
       }
-      $('html, body').animate({scrollTop: $("#tjänster").offset().top}, 2000)
+      $('html, body').animate({scrollTop: $("#tjänster").offset().top - 885.6}, 2000)
     }
     else if(button === 'Om oss'){
-      if(pageName === "boka-page.html"){
-        window.location = "./index.html";
+      if(pageName !== "index.html"){
         localStorage.setItem('offsetName', '#om-oss');
+        window.location = "./index.html";
         return;
       }
       $('html, body').animate({scrollTop: $("#om-oss").offset().top}, 2000)
     }
     else if(button === 'Kontakta oss'){
-      if(pageName === "boka-page.html"){
-        window.location = "./index.html";
+      if(pageName !== "index.html"){
         localStorage.setItem('offsetName', '#kontakt');
+        window.location = "./index.html";
         return;
       }
       $("html, body").animate({ scrollTop: $('#kontakt').offset().top}, 2000)
@@ -51,7 +52,11 @@ $(document).ready(function(){
       $('.login').text("Logga in");
     }
   });
+  $("#boka").click(function(e){
+      window.location = "./bokningsformulär.html";
+  });
 });
+
 function getCurentFileName(){
     var pagePathName= window.location.pathname;
     return pagePathName.substring(pagePathName.lastIndexOf("/") + 1);
