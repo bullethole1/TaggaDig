@@ -1,5 +1,7 @@
- <?php include_once('database.php');
- ?>
+<?php 
+ require_once("session.php"); 
+ include_once('database.php');
+?>
  <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +15,7 @@
  
 <a href="boka.php">Boka här </a>
 
- <?php require_once("session.php"); 
+<?php
 
 $_SESSION['message'] = 'Fel inlogg';
 $_SESSION['logged_in'] = $_POST['email']; 
@@ -25,13 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $user = $_POST['email'];
     $password = $_POST['password'];
     $krypterad = crypt($password, "salt");
-$sql = "SELECT `business`, `id`  FROM members WHERE email = :mail AND password = :crypt";
+$sql = "SELECT `business`, id  FROM members WHERE email = :mail AND password = :crypt";
 $row=$pdo->prepare($sql);
 $row->execute(['mail' => $user, 
             'crypt' =>$krypterad]);
 $result=$row->fetchAll(PDO::FETCH_ASSOC);
 $main = array('data'=>$result);
-$_SESSION['userid'] = $result['id'];
+$_SESSION['userid'] = $result[0]['id'];
+// echo $result[0]['id'];
 
 echo json_encode($main); 
 }
