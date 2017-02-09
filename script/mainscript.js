@@ -1,11 +1,9 @@
 $(document).ready(function(){
-  var offsetName = localStorage.getItem("someVarName");
-  /*if(offsetName != null){
-    $('html, body').animate({
-                        scrollTop: $("#om-oss").offset().top
-                    }, 2000)
-  offsetName = null;
-  }*/
+  var offsetName = localStorage.getItem("offsetName");
+  if(offsetName != null){
+    $('html, body').animate({scrollTop: $(offsetName).offset().top}, 2000)
+      localStorage.removeItem("offsetName");
+  }
   console.log(offsetName);
 
 
@@ -22,32 +20,35 @@ $(document).ready(function(){
     else if(button === 'Tjänster'){
       if(pageName === "boka-page.html"){
         window.location = "./mainpage.html";
+        localStorage.setItem('offsetName', '#tjänster');
+        return;
       }
-      $('html, body').animate({
-                          scrollTop: $("#tjänster").offset().top
-                      }, 2000)
+      $('html, body').animate({scrollTop: $("#tjänster").offset().top}, 2000)
     }
     else if(button === 'Om oss'){
       if(pageName === "boka-page.html"){
         window.location = "./mainpage.html";
         localStorage.setItem('offsetName', '#om-oss');
+        return;
       }
-      $('html, body').animate({
-                          scrollTop: $("#om-oss").offset().top
-                      }, 2000)
+      $('html, body').animate({scrollTop: $("#om-oss").offset().top}, 2000)
     }
     else if(button === 'Kontakta oss'){
       if(pageName === "boka-page.html"){
         window.location = "./mainpage.html";
+        localStorage.setItem('offsetName', '#kontakt');
+        return;
       }
-      $("html, body").animate({ scrollTop: $(document).height() }, 2000);
-      return false;
+      $("html, body").animate({ scrollTop: $('#kontakt').offset().top}, 2000)
     }
     else if(button === 'Logga in'){
+      $('#login-background').css('visibility', 'hidden');
       //$(this).html("<a>Logga ut</a>");
       $('.login').text("Logga ut");
     }
     else if(button === 'Logga ut'){
+      $('#login-background').css('visibility', 'visible');
+
       $('.login').text("Logga in");
     }
   });
