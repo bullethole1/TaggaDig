@@ -27,9 +27,11 @@ failed();
 
 
 <?php
+// UPPDATERA ANVÄNDARE
 // $_SESSION['email'] = 'email';
 
-//  var_dump($_SESSION['userid']);
+ var_dump($_SESSION['userid']);
+// var_dump($_SESSION['mail']);
  
 if(isset($_POST['update'])) {	
 if(isset( $_SESSION['userid']) ){  
@@ -72,8 +74,7 @@ if(isset( $_SESSION['userid']) ){
                     $updateStm = $pdo->prepare("UPDATE `members` SET `phone` = :phone WHERE `id`= :id");
                     $updateStm->execute(['phone' => $_POST['phone'], 'id' => $_SESSION['userid']]);
                     // echo "phone uppdat.";
-                    // echo "<br>";
-                    
+                    // echo "<br>";           
 
     }
    
@@ -88,6 +89,21 @@ if(isset( $_SESSION['userid']) ){
 }
 
 }
+
+//UPPDATERA ORDER
+// $_SESSION['userid'] = $member_id;
+
+$sql_order = "SELECT *  FROM `orders` WHERE `member_id` = {$_SESSION['userid']}  ";
+$row = $pdo->prepare($sql_order);
+$row->execute();
+$resultat=$row->fetchAll(PDO::FETCH_ASSOC);
+$main_order = array('data'=> $resultat);
+echo json_encode($main_order);
+
+
+
+
+
 ?>
 
 
