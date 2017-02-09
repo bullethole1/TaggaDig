@@ -8,6 +8,9 @@
   <meta name="viewport" content="witdth=devicewidth, initial-scale=1">
   <link type="text/css" rel="stylesheet" href=".\style\stylesheet.css"/>
   <link rel="shortcut icon" type="image/x-icon" href=".\img\Head_Logo.ico" />
+  <link rel="stylesheet" href=".\jquery-ui\jquery-ui.min.css">
+  <script src=".\external/jquery/jquery.js"></script>
+  <script src=".\jquery-ui\jquery-ui.min.js"></script>
   	<title>TaggaDig</title>
 
 </head>
@@ -47,20 +50,21 @@
       </header>
 
           <section>
-          <div style="text-align: auto" class="jumbotron googlebild">
+            <div style="text-align: auto" class="jumbotron googlebild no-padding">
+            <section>
+              <div id="map"></div>
+              <div class="row">
+                <div class="col-md-5">
+                </div>
+                <button class="btn btn-lg btn-primary button-style login" id="getin">Boka<a  href="#" role="button"></a>
+                <div class="col-md-5">
+                </div>
+              </div>
+               </button>
+            </section>
+          <section>
+              </div>
 
-           <iframe class="col-md-12 no-border" height="500" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBWCdPM0D8xFcRnBXdzxJm9nCSntUd6DNM
-               &q=Space+Needle,Seattle+WA" allowfullscreen>
-
-            </iframe>
-
-            </div>
-
-           <article class="row">
-               <div class="line col-md-12">
-
-               </div>
-           </article>
 
 
             <article>
@@ -119,16 +123,10 @@
 
 
 
-
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src=".\script\mainscript.js"></script>
+<script src=".\script\map-script.js"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBadYreLXUab7Ssq5A7WEJ1yzpIJ20yKco&callback=initMap"></script>
 </body>
 </html>
