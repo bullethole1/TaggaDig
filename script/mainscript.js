@@ -11,11 +11,10 @@ $(document).ready(function(){
   $(".button").click(function(e){
     var button = $(this).text();
     if(button === 'Hem'){
-      console.log("Hejsan");
+      window.location = "./index.html";
     }
     else if(button === 'Boka'){
       window.location = "./boka-page.html";
-      console.log("Hejsan");
     }
     else if(button === 'Tjänster'){
       if(pageName === "boka-page.html"){
