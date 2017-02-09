@@ -3,7 +3,7 @@
 include_once 'database.php';
 require_once "session.php";
 ?>
-<h2> Användare </h2>    
+<!--<h2> Användare </h2> -->    
 
 <?php
 // hämta alla användare
@@ -16,7 +16,7 @@ $main = array('data'=>$result);
 echo json_encode($main); 
 ?> 
   
-<h2> Ordrar </h2>
+<!--<h2> Ordrar </h2> -->
 <?php
 // hämta alla ordrar
 
@@ -32,7 +32,7 @@ if(isset($_POST['delete_order'])){
     $sql = "DELETE FROM `orders`  WHERE `orders` . `orderNr` = :id";
 $stm_delete = $pdo->prepare($sql);
 $stm_delete->execute(array ('id' => ($_POST['delete_order'] ) ));
-echo "tagit bort";
+// echo "tagit bort";
 }
 
 
@@ -40,7 +40,7 @@ if(isset($_POST['delete'])){
     $sql = "DELETE FROM `members`  WHERE `members` . `id` = :id_number";
 $stm_delete = $pdo->prepare($sql);
 $stm_delete->execute(array ('id_number' => ($_POST['delete'] ) ));
-echo "tagit bort";
+// echo "tagit bort";
 }
 
 

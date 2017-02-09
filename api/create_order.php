@@ -91,7 +91,7 @@ echo json_encode($main_order);
 }
      
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -113,8 +113,8 @@ $main_area = array('data'=>$result);
 echo json_encode($main_area); 
 
 
-echo "<br>";
-echo "<br>";
+// echo "<br>";
+// echo "<br>";
 
 
 //   $result = $pdo->query("SELECT `area`, `id` FROM `products` WHERE `status` = 1");
@@ -125,7 +125,7 @@ echo "<br>";
 //    }
 
 ?>
-  </datalist>
+<!--  </datalist> -->
  <!-- <input list="model" name="model" value="" placeholder="Model" /><br>
   <datalist id="model"> 
  -->  
@@ -138,7 +138,7 @@ $main_model = array('data'=>$result);
 
 echo json_encode($main_model); 
 
-echo "<br>";
+// echo "<br>";
 
 //   $result = $pdo->query("SELECT `model` FROM `products` GROUP BY `model` ");
 //    foreach($result as $row){
@@ -146,7 +146,7 @@ echo "<br>";
 //          echo "<option value=\"$model\">";
 //    }
    ?>
-  </datalist>
+<!--  </datalist>
  <input type="text" name="firstName" value="" placeholder="Namn" /><br>
  <input type="text" name="lastName" value="" placeholder="Efternamn"/><br>
  <input type="text" name="email" value="" placeholder="E-post"/><br>
@@ -156,4 +156,4 @@ echo "<br>";
     <input type="file" name="upFile" value="" placeholder="Ladda up fil" /><br>
 
    <button type="submit" name="update">Boka</button>
-   
+   -->
