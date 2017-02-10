@@ -1,5 +1,4 @@
 <?php
-
 require_once "session.php";
 include_once 'database.php';
 ?>
@@ -16,9 +15,12 @@ include_once 'database.php';
  
 <a href="boka.php">Boka här </a>
 
+
 <?php 
 $_SESSION['message'] = 'Fel inlogg';
 $_SESSION['logged_in'] = $_POST['email'];
+
+
 failed();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $_POST['email'];
@@ -30,10 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $row->fetchAll(\PDO::FETCH_ASSOC);
     $main = array('data' => $result);
     $_SESSION['userid'] = $result[0]['id'];
-    // $_SESSION['mail'] = $result[0]['email'];
-    // echo $result[0]['id'];
+
     echo json_encode($main);
 }
+
+
+
+
+
 // if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 //     $user = $_POST['email'];
 //     $password = $_POST['password'];

@@ -21,6 +21,16 @@ function  failed(){
     }
 }
 
+
+function admin(){
+    if(!isset($_SESSION['admin'])){
+        header("Location: connect_admin.php");
+        exit;
+    }
+}
+
+
+
 // function json($data) {
 //     header('Content-Type: application/json');
 //     echo json_encode($data);

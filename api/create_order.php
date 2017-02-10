@@ -86,7 +86,7 @@ echo json_encode($main_order);
 
             $stm_insert->execute();
            $lastid = $pdo->lastInsertId();
-   echo " <p> Din bild: </p> <img src=get.php?id=$lastid width='200px'>";   
+//    echo " <p> Din bild: </p> <img src=get.php?id=$lastid width='200px'>";   
 
 
 
