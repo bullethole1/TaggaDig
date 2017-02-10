@@ -23,7 +23,7 @@ $(document).ready(function(){
         window.location = "./index.html";
         return;
       }
-      $('html, body').animate({scrollTop: $("#tjänster").offset().top - 885.6}, 2000)
+      $('html, body').animate({scrollTop: $("#tjänster").offset().top}, 2000)
     }
     else if(button === 'Om oss'){
       if(pageName !== "index.html"){
