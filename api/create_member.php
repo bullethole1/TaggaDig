@@ -55,8 +55,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
               if( $antal_rader > 0 ) {
                 // echo "Finns redan";
             }else{
-                $sql = "INSERT INTO `members` (`business`, `firstName`, `lastName`, `email`, `phone`, `password`)
-                VALUES( :businessName, :fName, :lName, :mail, :tel, :pass)";
+                $sql = "INSERT INTO `members` (`business`, `firstName`, `lastName`, `email`, `phone`, `password`, `user_type`)
+                VALUES( :businessName, :fName, :lName, :mail, :tel, :pass, '1')";
 
 
                 $stm_insert = $pdo -> prepare($sql);
@@ -66,7 +66,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                     'lName' => $_POST['lastName'],
                     'mail' =>  $_POST['email'], 
                     'tel' => $_POST['phone'],
-                    'pass' =>  crypt($_POST['password'], "salt")
+                    'pass' =>  crypt($_POST['password'], "salt"),
+                    // 'm' => $_POST['user'],
                      ]);
                 // echo "Registrerad";
             }
@@ -82,5 +83,5 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 ?>
 
 
-</body>
-</html>
+<!--</body>
+</html>-->

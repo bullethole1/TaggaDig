@@ -2,6 +2,7 @@
 require_once "session.php";
 include_once 'database.php';
 // hämta alla ordrar
+// admin();
 
 $sql_order = "SELECT *  FROM `orders` WHERE `orderNr` > 0 ";
 $row = $pdo->prepare($sql_order);

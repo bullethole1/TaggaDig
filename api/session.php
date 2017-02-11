@@ -23,8 +23,8 @@ function  failed(){
 
 
 function admin(){
-    if(!isset($_SESSION['admin'])){
-        header("Location: connect_admin.php");
+    if(!isset($_SESSION['usertype'])){
+        header("Location: connect.php");
         exit;
     }
 }
