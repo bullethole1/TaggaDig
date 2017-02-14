@@ -8,6 +8,6 @@ $row = $pdo->prepare($sql_order);
 $row->execute();
 $resultat=$row->fetchAll(PDO::FETCH_ASSOC);
 $main_order = array('data'=> $resultat);
-echo json_encode($main_order);
+echo json_encode($main_order, JSON_UNESCAPED_UNICODE);
 
 ?> 

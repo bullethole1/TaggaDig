@@ -40,21 +40,21 @@ if(isset( $_SESSION['userid']) ){
     if (isset($_POST['business'])&& strlen($_POST['business']) > 0) {
                     $updateStm = $pdo->prepare("UPDATE `members` SET `business` = :business WHERE `id`= :id");
                     $updateStm->execute(['business' => $_POST['business'], 'id' => $_SESSION['userid']]);
-                    // echo "business uppdat.";
+                    echo json_encode(true);
                     // echo "<br>";
                     
     } 
     if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0) {
                     $updateStm = $pdo->prepare("UPDATE `members` SET `firstName` = :firstName WHERE `id`= :id");
                     $updateStm->execute(['firstName' => $_POST['firstName'], 'id' => $_SESSION['userid']]);
-                    // echo "firstname uppdat.";
+                    echo json_encode(true);
                     // echo "<br>";
     }
 
     if (isset($_POST['lastName']) && strlen($_POST['lastName']) > 0) {
                     $updateStm = $pdo->prepare("UPDATE `members` SET `lastName` = :lastName WHERE `id`= :id");
                     $updateStm->execute(['lastName' => $_POST['lastName'], 'id' => $_SESSION['userid']]);
-                    // echo "lastname uppdat.";
+                    echo json_encode(true);
                     // echo "<br>";
                     
 
@@ -63,7 +63,7 @@ if(isset( $_SESSION['userid']) ){
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
                     $updateStm = $pdo->prepare("UPDATE `members` SET `email` = :email WHERE `id`= :id");
                     $updateStm->execute(['email' => $_POST['email'], 'id' => $_SESSION['userid']]);
-                    // echo "email uppdat.";
+                    echo json_encode(true);
                     // echo "<br>";
         }
                 else {
@@ -74,7 +74,7 @@ if(isset( $_SESSION['userid']) ){
     if (isset($_POST['phone'])&& strlen($_POST['phone']) > 0) {
                     $updateStm = $pdo->prepare("UPDATE `members` SET `phone` = :phone WHERE `id`= :id");
                     $updateStm->execute(['phone' => $_POST['phone'], 'id' => $_SESSION['userid']]);
-                    // echo "phone uppdat.";
+                    echo json_encode(true);
                     // echo "<br>";           
 
     }
@@ -83,7 +83,7 @@ if(isset( $_SESSION['userid']) ){
     if (isset($_POST['password'])&& strlen($_POST['password']) > 0) {
                         $updateStm = $pdo->prepare("UPDATE `members` SET `password` = :password WHERE `id`= :id");
                         $updateStm->execute(['password' => $_POST['password'], 'id' => $_POST['update']]);
-                    //     echo "password uppdat.";
+                    echo json_encode(true);
                     // echo "<br>";
                         
     }
