@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!-- <!DOCTYPE>
 <html>
  <head>
    
@@ -150,4 +150,4 @@ foreach($stm as $row ) {
 
 
     </body>
-    </html>
+    </html> -->

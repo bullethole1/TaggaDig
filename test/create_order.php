@@ -1,6 +1,4 @@
 <?php
-
-//ob_start();
 require_once 'session.php';
 include_once 'database.php';
 failed();

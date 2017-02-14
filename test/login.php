@@ -36,7 +36,7 @@ var_dump($_SESSION['userid']);
 
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
 <meta charset="utf-8">
@@ -49,4 +49,4 @@ var_dump($_SESSION['userid']);
  
 <a href="boka.php">Boka här </a> 
 </body>
-</html>
+</html> -->

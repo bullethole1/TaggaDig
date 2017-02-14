@@ -2,7 +2,7 @@
 require_once'session.php';
 require_once'database.php';
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
 <meta charset="utf-8">
@@ -12,7 +12,7 @@ require_once'database.php';
      <input type="text" name="email" value="" placeholder="E-post" /><br>
      <input type="password" name="password" value="" placeholder="Lösenord"/><br> 
     <button type="submit" name="login">Logga in</button>
-</form>
+</form> -->
 
 <?php 
 
@@ -22,7 +22,7 @@ session_destroy();
 ?>
 
 
-</body>
-</html>
+<!-- </body>
+</html> -->
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
         <input type="password" name="password" value="" placeholder="Lösenord"/><br>
         <input type="password" name="passwordsecond" value="" placeholder="fyll i lösenord igen"/><br>
         <button type="submit">Submit</button>
-    </form> 
+    </form>  -->
 <?php
 include_once'database.php';
 
@@ -84,5 +84,5 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 ?>
 
 
-</body>
-</html>
+<!-- </body>
+</html> -->
