@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($krypterad == $rows[0]['password']){
         $_SESSION['userid'] = $rows[0]['id'];
         $_SESSION['user_type'] =$rows[0]['user_type'];
-        echo json_encode($main);
+        echo json_encode($main, JSON_UNESCAPED_UNICODE);
     } 
     }else {
         $_SESSION['message'];

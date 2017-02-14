@@ -13,7 +13,7 @@ $row->execute();
 $result=$row->fetchAll(PDO::FETCH_ASSOC);
 $main = array('data'=>$result);
 
-echo json_encode($main); 
+echo json_encode($main, JSON_UNESCAPED_UNICODE); 
 
 }
 

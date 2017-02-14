@@ -29,7 +29,7 @@ if (!isset($_FILES['upFile']['tmp_name'])) {
             $row->execute(['arean' => $_POST['area']]);
             $result = $row->fetchAll(\PDO::FETCH_ASSOC);
             $main_order = array('data' => $result);
-            echo json_encode($main_order);
+            echo json_encode($main_order, JSON_UNESCAPED_UNICODE);
             // $sql = "SELECT *  FROM `products` WHERE `area` = :arean AND `status` = 1";
             // $stm_price = $pdo -> prepare($sql);
             // $stm_price -> execute ([ 'arean' => $_POST['area'] ]);
@@ -87,7 +87,7 @@ $row = $pdo->prepare($sql_area);
 $row->execute();
 $result = $row->fetchAll(\PDO::FETCH_ASSOC);
 $main_area = array('data' => $result);
-echo json_encode($main_area);
+echo json_encode($main_area, JSON_UNESCAPED_UNICODE);
 // echo "<br>";
 // echo "<br>";
 //   $result = $pdo->query("SELECT `area`, `id` FROM `products` WHERE `status` = 1");
@@ -108,7 +108,7 @@ $row = $pdo->prepare($sql_model);
 $row->execute();
 $result = $row->fetchAll(\PDO::FETCH_ASSOC);
 $main_model = array('data' => $result);
-echo json_encode($main_model);
+echo json_encode($main_model, JSON_UNESCAPED_UNICODE);
 // echo "<br>";
 //   $result = $pdo->query("SELECT `model` FROM `products` GROUP BY `model` ");
 //    foreach($result as $row){

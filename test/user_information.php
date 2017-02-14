@@ -10,6 +10,6 @@ $row = $pdo->prepare($sql_user);
 $row->execute();
 $resultat=$row->fetchAll(PDO::FETCH_ASSOC);
 $main_user = array('data'=> $resultat);
-echo json_encode($main_user);
+echo json_encode($main_user, JSON_UNESCAPED_UNICODE);
 
 ?> 
