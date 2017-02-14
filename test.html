@@ -52,7 +52,8 @@
 			$("button").click(function() {
 				console.log("hej");
 				request.onreadystatechange = handler;
-				request.open("POST","http://taggadig.zocomutbildning.se/test/create_member.php?business=ADNAN&firstName=Adnan&lastName=Alihodzic&email=ado123@hotmail.com&phone=12345&password=hubabuba");
+				request.open("POST","http://taggadig.zocomutbildning.se/test/create_member.php?businessName=ADNAN&fName=Adnan&lName=Alihodzic&mail=ado123@hotmail.com&tel=12345&pass=hubabuba");
+
 
 				request.send();
 
