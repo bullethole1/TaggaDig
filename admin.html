@@ -4,10 +4,15 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <meta charset="utf-8">
-  <meta name="viewport" content="witdth=devicewidth, initial-scale=1">
+  <meta name="viewport" content="width=devicewidth, initial-scale=1">
   <link type="text/css" rel="stylesheet" href=".\style\stylesheet.css"/>
   <link rel="shortcut icon" type="image/x-icon" href=".\img\Head_Logo.ico" />
   	<title>TaggaDig</title>
+    <style>
+        th, td {
+          border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
 
@@ -78,7 +83,10 @@
 	</div>
 
 	<div class="btn-group col-md-3">
-    <button type="button" class="btn btn-default bokningarna">Se alla bokningar</button>
+    <button type="button" id="tryck" class="btn btn-default bokningarna">Se alla bokningar</button>
+    <table id="bajs" style="border: 1px solid  black">
+      
+    </table>
   </div>
 
 	</div><!--row-->
@@ -122,5 +130,7 @@
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="script/GoranJason.js"></script>
 </body>
 </html>
