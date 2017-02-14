@@ -50,13 +50,30 @@
 
 		$(document).ready(function() {
 			$("button").click(function() {
-				console.log("hej");
+				/**console.log("hej");
 				request.onreadystatechange = handler;
-				request.open("GET","http://taggadig.zocomutbildning.se/test/create_member.php?business=ADNAN&firstName=Adnan&lastName=Alihodzic&email=ado123@hotmail.com&phone=12345&password=hubabuba");
-				
-
+				request.open("POST","http://taggadig.zocomutbildning.se/test/create_member.php?business=ADNAN&firstName=Adnan&lastName=Alihodzic&email=ado123@hotmail.com&phone=12345&password=hubabuba&passwordsecond=hubabuba");
 				request.send();
+					**/
 
+				d = {
+					business: "ADNAN",
+					firstName: "Goran",
+					lastName: "Persson",
+					email: "jimmieakesson@kapitalistsvin.com",
+					phone: 34545,
+					password: "hubabuba",
+					passwordsecond: "hubabuba"
+				};
+				$.ajax({
+					type: "POST",
+					url: "http://taggadig.zocomutbildning.se/test/create_member.php",
+					data: d,
+					dataType: "json",
+					success: function(response) {
+						console.log(response);
+					}
+				});
 			});
 		}); 
 
