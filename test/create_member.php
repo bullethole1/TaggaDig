@@ -22,12 +22,12 @@ include_once'database.php';
 
         $formArr = array('business', 'firstName', 'lastName', 'email', 'phone', 'password' );
         $error = false; 
-        foreach($formArr AS $row) { 
+    /**    foreach($formArr AS $row) { 
           if(!isset($_POST[$row]) || empty($_POST[$row])) {
             // echo $row.' saknas<br />'; 
             $error = true; 
-        }
-    }
+          }
+        }**/
 
 
 $email = $_POST['email'];
@@ -39,6 +39,12 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
     die();
 }
 
+function mt_rand_str ($l, $c = 'abcdefghiJKkLmnopQRStuVwxyz1234567890') {
+            for ($s = '', $cl = strlen($c)-1, $i = 0; $i < $l; $s .= $c[mt_rand(0, $cl)], ++$i);
+            return $s;
+        }
+
+
     if( $_POST['password'] == $_POST['passwordsecond']){
 
         if(!$error){
@@ -49,18 +55,14 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                 $stm_count->execute(['mail' => $_POST['email']]);
                 foreach( $stm_count as $row ) {
                   $antal_rader = $row['antal_rader'];
-              }
-              if( $antal_rader > 0 ) {
+            }
+            if( $antal_rader > 0 ) {
                 echo json_encode(FALSE);
             }else{
                 $sql = "INSERT INTO `members` (`business`, `firstName`, `lastName`, `email`, `phone`, `password`, `salt`, `user_type`)
                 VALUES( :businessName, :fName, :lName, :mail, :tel, :pass, :salt, '1')";
 
-	function mt_rand_str ($l, $c = 'abcdefghiJKkLmnopQRStuVwxyz1234567890') {
-		    for ($s = '', $cl = strlen($c)-1, $i = 0; $i < $l; $s .= $c[mt_rand(0, $cl)], ++$i);
-		    return $s;
-		}
-        $salt = mt_rand_str(31); 
+	            $salt = mt_rand_str(31); 
                 $stm_insert = $pdo -> prepare($sql);
                 $stm_insert -> execute  ([
                     'businessName' => $_POST['business'],
