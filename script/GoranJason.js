@@ -20,7 +20,7 @@
       // Tillhör AdminSidan
      $("#tryck").click(function(){
       console.log("hej");
-        $.getJSON("http://localhost:88/taggaDig/api/show_members_admin.php", function(data){
+        $.getJSON("http://taggadig.zocomutbildning.se/test/show_members_admin.php", function(data){
 
              var newdata = data.data;
              var poop = "<thead><tr><th>business</th> <th>Förnamn</th><th>Efternamn</th><th>Mail</th></tr></thead><tbody>";
