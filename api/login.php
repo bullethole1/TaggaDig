@@ -7,25 +7,34 @@ failed();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $_POST['email'];
     $password = $_POST['password'];
-    $krypterad = crypt($password, "salt");
+
     
-    $sql = "SELECT  id, business,  email FROM members WHERE email = :mail AND password = :crypt";
+    $sql = "SELECT  id, business, password, salt, email, user_type FROM members WHERE email = :mail";
     $row = $pdo->prepare($sql);
-    $row->execute(['mail' => $user, 'crypt' => $krypterad]);
+    $row->execute(['mail' => $user]);
     $rows = $row->fetchAll(\PDO::FETCH_ASSOC);
     // $result = $row->fetch(PDO::FETCH_NUM);
     if ($row->rowCount() > 0) {
         // $result = $row->fetch(\PDO::FETCH_NUM);
         $main = array('data' => $rows);
+        $krypterad = crypt($password, $rows[0]['salt']);
+        if($krypterad == $rows[0]['password']){
         $_SESSION['userid'] = $rows[0]['id'];
+        $_SESSION['user_type'] =$rows[0]['user_type'];
         echo json_encode($main);
-    } else {
+    } 
+    }else {
         $_SESSION['message'];
         header('location: connect.php');
         exit;
     }
 }
 var_dump($_SESSION['userid']);
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>

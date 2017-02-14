@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once 'database.php';
 
 // om fel inlogg, skriv ut errormedd. 
 function error_message(){

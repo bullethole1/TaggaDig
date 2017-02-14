@@ -1,6 +1,6 @@
 <?php 
-    include_once('database.php');
-    require_once("session.php"); 
+    include_once'database.php';
+    require_once'session.php'; 
     failed();     // kom inte åt försen inlogg
     $_SESSION['logged_in'] = $_POST['email'];
 

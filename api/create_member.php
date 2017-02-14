@@ -1,5 +1,4 @@
-
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,10 +14,9 @@
         <input type="password" name="password" value="" placeholder="Lösenord"/><br>
         <input type="password" name="passwordsecond" value="" placeholder="fyll i lösenord igen"/><br>
         <button type="submit">Submit</button>
-    </form> -->
-
-    <?php
-    include_once('database.php');
+    </form> 
+<?php
+include_once'database.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -53,12 +51,16 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                   $antal_rader = $row['antal_rader'];
               }
               if( $antal_rader > 0 ) {
-                // echo "Finns redan";
+                echo json_encode(FALSE);
             }else{
-                $sql = "INSERT INTO `members` (`business`, `firstName`, `lastName`, `email`, `phone`, `password`, `user_type`)
-                VALUES( :businessName, :fName, :lName, :mail, :tel, :pass, '1')";
+                $sql = "INSERT INTO `members` (`business`, `firstName`, `lastName`, `email`, `phone`, `password`, `salt`, `user_type`)
+                VALUES( :businessName, :fName, :lName, :mail, :tel, :pass, :salt, '1')";
 
-
+	function mt_rand_str ($l, $c = 'abcdefghiJKkLmnopQRStuVwxyz1234567890') {
+		    for ($s = '', $cl = strlen($c)-1, $i = 0; $i < $l; $s .= $c[mt_rand(0, $cl)], ++$i);
+		    return $s;
+		}
+        $salt = mt_rand_str(31); 
                 $stm_insert = $pdo -> prepare($sql);
                 $stm_insert -> execute  ([
                     'businessName' => $_POST['business'],
@@ -66,15 +68,14 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                     'lName' => $_POST['lastName'],
                     'mail' =>  $_POST['email'], 
                     'tel' => $_POST['phone'],
-                    'pass' =>  crypt($_POST['password'], "salt"),
-                    // 'm' => $_POST['user'],
-                     ]);
-                // echo "Registrerad";
+                    'pass' =>  crypt($_POST['password'], $salt),
+                    'salt' => $salt  ]);
+                echo json_encode(TRUE);
             }
         }
     }
 }else {
-    // echo "lösenord matchar ej";
+    echo json_encode(FALSE);
 }
 
 }
@@ -83,5 +84,5 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 ?>
 
 
-<!--</body>
-</html>-->
+</body>
+</html>

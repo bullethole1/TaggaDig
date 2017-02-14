@@ -1,6 +1,6 @@
 <?php 
-require_once('database.php');
-require_once("session.php"); 
+require_once'session.php';
+require_once'database.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@ require_once("session.php");
 <meta charset="utf-8">
     </head>
     <body>
-<form action="login.php" method="POST">
+<form action="login.php" method="POST" name="login">
      <input type="text" name="email" value="" placeholder="E-post" /><br>
      <input type="password" name="password" value="" placeholder="Lösenord"/><br> 
     <button type="submit" name="login">Logga in</button>

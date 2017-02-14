@@ -1,6 +1,6 @@
 <?php
-require_once("session.php"); 
-include_once('database.php');
+require_once'session.php'; 
+include_once'database.php';
 failed();
 //SE ORDER
 $sql_order = "SELECT *  FROM `orders` WHERE `member_id` = {$_SESSION['userid']}  ";
