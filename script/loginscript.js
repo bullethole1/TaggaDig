@@ -7,9 +7,25 @@ $(document).ready(function() {
 
 			if(userObject != null){
 				$("#username").text(userObject);
+				$('#login-background').css('visibility', 'hidden');
+				$('.login').text("Logga ut");
 				console.log("fsdg");
 			}
+			else{
+				$('.login').text("Logga in");
+				$('#login-background').css('visibility', 'visible');
+			}
+			$(".login").click(function(){
+				if($('.login').text === "Logga ut"){
+					$('.login').text("Logga in");
+					userObject = null;
+					sessionStorage.clear();
+				}
+			});
+
 			$("#login-frontpage").click(function() {
+
+				$('.login').text("Logga ut");
 				usernameInput = $("#userEmail").val();
 				usernamePass = $("#userPassword").val();
 
@@ -17,8 +33,10 @@ $(document).ready(function() {
 
 					email: usernameInput,
 					password: usernamePass
-			
+
 				};
+				}
+			});
 				$.ajax({
 					type: "POST",
 					url: "http://taggadig.zocomutbildning.se/test/login.php",
@@ -37,4 +55,4 @@ $(document).ready(function() {
 
 				});
 			});
-		}); 
+		});

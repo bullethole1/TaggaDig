@@ -41,7 +41,7 @@ $(document).ready(function(){
       }
       $("html, body").animate({ scrollTop: $('#kontakt').offset().top}, 2000)
     }
-    else if(button === 'Logga in'){
+    /*else if(button === 'Logga in'){
       $('#login-background').css('visibility', 'hidden');
       //$(this).html("<a>Logga ut</a>");
       $('.login').text("Logga ut");
@@ -50,7 +50,7 @@ $(document).ready(function(){
       $('#login-background').css('visibility', 'visible');
 
       $('.login').text("Logga in");
-    }
+    }*/
   });
   $("#boka").click(function(e){
       window.location = "./bokningsformulär.html";
