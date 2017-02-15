@@ -1,10 +1,22 @@
+var usernameInput = "";
+var usernamePass = "";
+
 $(document).ready(function() {
+			var userObject = sessionStorage.getItem("userObject");
+				console.log(userObject);
+
+			if(userObject != null){
+				$("#username").text(userObject);
+				console.log("fsdg");
+			}
 			$("#login-frontpage").click(function() {
+				usernameInput = $("#userEmail").val();
+				usernamePass = $("#userPassword").val();
+
 				loginform = {
 
-					email: "emil@email.com",
-					password: "123",
-					passwordsecond: "123"
+					email: usernameInput,
+					password: usernamePass
 			
 				};
 				$.ajax({
@@ -12,15 +24,17 @@ $(document).ready(function() {
 					url: "http://taggadig.zocomutbildning.se/test/login.php",
 					data: loginform,
 					dataType: "json",
-					success: function(response) {
-						console.log(response);
+					success: function(data) {
+						$("#username").text(data.data[0].business);
+						sessionStorage.setItem("userObject", data.data[0].business);
+						console.log(sessionStorage.getItem("userObject"));
 					}
 				})
-				.done(function(){
-					alert("Welcome");
-				})
-				.fail(function(){
-					alert("Failed to log in");
+				.fail(function(error, status, errortext){
+					console.log(error);
+					console.log(status);
+					console.log(errortext);
+
 				});
 			});
 		}); 

@@ -29,24 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 }
-var_dump($_SESSION['userid']);
-
-
-
-
-
 ?>
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-<meta charset="utf-8">
-    </head>
-    <body>
-<form action="logout.php" method="POST">
-
-    <button type="submit" name="">LOGGA UT</button>
-</form>
- 
-<a href="boka.php">Boka här </a> 
-</body>
-</html> -->
