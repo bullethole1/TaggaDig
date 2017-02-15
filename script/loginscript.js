@@ -2,8 +2,9 @@ $(document).ready(function() {
 			$("#login-frontpage").click(function() {
 				loginform = {
 
-					email: "alihodzicadnan@hotmail.com",
-					password: "11111"
+					email: "emil@email.com",
+					password: "123",
+					passwordsecond: "123"
 			
 				};
 				$.ajax({
