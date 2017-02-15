@@ -25,7 +25,6 @@ $(document).ready(function() {
 
 			$("#login-frontpage").click(function() {
 
-				$('.login').text("Logga ut");
 				usernameInput = $("#userEmail").val();
 				usernamePass = $("#userPassword").val();
 
@@ -46,6 +45,9 @@ $(document).ready(function() {
 						$("#username").text(data.data[0].business);
 						sessionStorage.setItem("userObject", data.data[0].business);
 						console.log(sessionStorage.getItem("userObject"));
+						$('.login').text("Logga ut");
+						$('#login-background').css('visibility', 'hidden');
+
 					}
 				})
 				.fail(function(error, status, errortext){
