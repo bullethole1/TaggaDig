@@ -13,9 +13,7 @@
               //  $("#storlek").val(data[0].firstName);
 
 
-               
-             
-    });
+              
 
       // Tillhör AdminSidan
      $("#tryck").click(function(){
@@ -32,12 +30,10 @@
 
              poop += "</tbody>";
              $("#bajs").html(poop);
-               
+            $("#bajs").fadeToggle();
     });
-        $("#tryck").click(function() {
-          $("#bajs").fadeOut();
-
-        });
+       
 
                
     });
+      });
