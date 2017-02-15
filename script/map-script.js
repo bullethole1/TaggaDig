@@ -6,11 +6,6 @@ $(document).ready(function() {
   			$( "#registerform" ).dialog( "open" );
 		});
 
-	$( "#centralen-form" ).dialog({ autoOpen: false, modal: true});
-		$( "#val" ).click(function() {
-  			$( "#centralen-form" ).dialog( "open" );
-	});
-
 });
 
  function initMap() {
@@ -38,9 +33,9 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 130' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 1000000' +
             '<br>'+
             '<label>Pris:</label>' +
             '<br>' +
@@ -55,11 +50,11 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 100' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 700000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 20000' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -72,11 +67,11 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 80' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 350000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 80000' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -89,11 +84,11 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 100' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 53000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 900000' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -106,11 +101,11 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 80' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 70000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 40000' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -124,11 +119,11 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 100' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 30000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 30000' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -141,11 +136,11 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 100' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 450000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 50000' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -158,11 +153,28 @@ $(document).ready(function() {
             '<br>'+
             '<label>Typ:</label> Mobile/Display' +
             '<br>' +
-            '<label>Storlek:</label>' +
+            '<label>Storlek:</label> 120' +
             '<br>'+ 
-            '<label>Räckvidd:</label>' +
+            '<label>Räckvidd:</label> 4700000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 150000' +
+            '<br>' +
+            '</div>'+
+            '</div>';
+
+            var contentStringCentralen = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Centralstationen</h1>'+
+            '<label>Område:</label> Centralstationen'+
+            '<br>'+
+            '<label>Typ:</label> Mobile/Display' +
+            '<br>' +
+            '<label>Storlek:</label> 100' +
+            '<br>'+ 
+            '<label>Räckvidd:</label> 1500000' +
+            '<br>'+
+            '<label>Pris:</label> 80000' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -204,11 +216,11 @@ $(document).ready(function() {
         });
 
         var infowindow9 = new google.maps.InfoWindow({
-          content: contentStringGotaplatsen
+          content: contentStringCentralen
         });
 
 
-        var windowList = [infowindow1,infowindow2,infowindow3,infowindow4,infowindow5,infowindow6,infowindow7,infowindow8];
+        var windowList = [infowindow1,infowindow2,infowindow3,infowindow4,infowindow5,infowindow6,infowindow7,infowindow8,infowindow9];
 
         var marker1 = new google.maps.Marker({
           position: korsvagen,
@@ -326,6 +338,21 @@ $(document).ready(function() {
            for(i=0; i <= windowList.length; i++){
             if(windowList[i] === infowindow8){
               infowindow8.open(map, marker8);  
+            }
+            else {
+                windowList[i].close();
+            }
+          }
+        });
+
+        var marker9 = new google.maps.Marker({
+          position: centralen,
+          map: map
+        });
+        marker9.addListener('click', function() {
+           for(i=0; i <= windowList.length; i++){
+            if(windowList[i] === infowindow9){
+              infowindow9.open(map, marker9);  
             }
             else {
                 windowList[i].close();
