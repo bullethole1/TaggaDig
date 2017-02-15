@@ -1,7 +1,7 @@
 <?php
 require_once 'session.php';
 include_once 'database.php';
-failed();
+//failed();
 // kom inte åt försen inlogg
 if (!isset($_FILES['upFile']['tmp_name'])) {
     echo "";

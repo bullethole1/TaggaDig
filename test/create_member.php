@@ -46,7 +46,6 @@ function mt_rand_str ($l, $c = 'abcdefghiJKkLmnopQRStuVwxyz1234567890') {
 
 
     if( $_POST['password'] == $_POST['passwordsecond']){
-
         if(!$error){
             if(isset($_POST['email']) ) {	
                 $sql = "SELECT COUNT(*) AS 'antal_rader' FROM `members`
