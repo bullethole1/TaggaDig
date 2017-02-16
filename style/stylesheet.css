@@ -245,12 +245,24 @@
 
  }
 
- .textfältet {
+ #textfältet {
  	padding-top: 20px;
  }
- .bokat {
+ #fältet {
+ 	padding-top: 10px;
+ }
+
+
+ #bokat {
  	text-align: right; padding-top: 10px
  }
- .laddaUp {
+ #laddaUp {
  	padding-top: 5px
+ }
+
+ #mySelect {
+ border: 1px solid black;
+ }
+ #type {
+ 	padding-top: 10px;
  }
