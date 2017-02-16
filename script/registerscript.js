@@ -1,3 +1,7 @@
+
+//Script som sköter allt kring registreringen
+
+//De olika variablerna för inputen
 var firstInput = "";
 var lastInput = "";
 var emailInput = "";
@@ -10,6 +14,16 @@ var fileInput = "";
 
 
 $(document).ready(function() {
+
+			//Skapar ett registeringsformulär i form av en dialogruta
+			//Visas när mar trycker på Registerar på sidan
+			$( "#registerform" ).dialog({ autoOpen: false, modal: true});
+				$( "#register" ).click(function() {
+  					$( "#registerform" ).dialog( "open" );
+				});
+
+
+			//När man trycker knappen registrera i dialogrutan och registreras som användare
 			$("#registerButton").click(function() {
 				firstInput = $("#forNamn").val();
 				lastInput = $("#efterNamn").val();
@@ -28,6 +42,8 @@ $(document).ready(function() {
 					password: firstPassInput,
 					passwordsecond: secondPassInput
 				};
+
+				//Ajax anrop till serverna som skickar iväg alla ovanstående fält
 				$.ajax({
 					type: "POST",
 					url: "http://taggadig.zocomutbildning.se/test/create_member.php",
@@ -35,8 +51,11 @@ $(document).ready(function() {
 					dataType: "json",
 					success: function(response) {
 						console.log(response);
+						alert("Du är nu registrerad");
+
 					}
 				});
+				//Stänger dialogrutan efter att man tryck på registreringsknappen
 				$("#registerform").dialog("close");
 			});
 		}); 

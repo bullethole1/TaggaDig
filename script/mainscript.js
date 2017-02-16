@@ -33,6 +33,12 @@ $(document).ready(function(){
       }
       $('html, body').animate({scrollTop: $("#om-oss").offset().top}, 2000)
     }
+    else if(button === 'Logga in'){
+      if(pageName !== "index.html"){
+        window.location = "./index.html";
+        return;
+      }
+    }
     else if(button === 'Kontakta oss'){
       if(pageName !== "index.html"){
         localStorage.setItem('offsetName', '#kontakt');
@@ -52,9 +58,15 @@ $(document).ready(function(){
       $('.login').text("Logga in");
     }*/
   });
+
   $("#boka").click(function(e){
       window.location = "./bokningsformulär.html";
   });
+
+  $("#backButton").click(function(e){
+     window.location = "./index.html";
+  });
+
 });
 
 function getCurentFileName(){

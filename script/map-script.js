@@ -1,14 +1,7 @@
-$(document).ready(function() {
-
-	
-	$( "#registerform" ).dialog({ autoOpen: false, modal: true});
-		$( "#register" ).click(function() {
-  			$( "#registerform" ).dialog( "open" );
-		});
-
-});
-
+//En google maps karta skapas med diverse platser 
  function initMap() {
+
+        //De olika platsernas kordinater på kartan 
         var centralen = {lat: 57.708876, lng: 11.973498999999947};
         var korsvagen = {lat: 57.6965417, lng: 11.986207199999967};
         var brunnsparken = {lat: 57.70676690000001, lng: 11.969477900000015};
@@ -24,7 +17,7 @@ $(document).ready(function() {
           center: centralen
         });
 
-     
+         //HTML strängar som skapas i de olika meddelangen rutorna för taggarna på kartan     
          var contentStringKorsvegen = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
@@ -37,7 +30,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 1000000' +
             '<br>'+
-            '<label>Pris:</label>' +
+            '<label>Pris:</label> 30000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -54,7 +47,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 700000' +
             '<br>'+
-            '<label>Pris:</label> 20000' +
+            '<label>Pris:</label> 20000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -71,7 +64,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 350000' +
             '<br>'+
-            '<label>Pris:</label> 80000' +
+            '<label>Pris:</label> 80000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -88,7 +81,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 53000' +
             '<br>'+
-            '<label>Pris:</label> 900000' +
+            '<label>Pris:</label> 900000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -105,7 +98,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 70000' +
             '<br>'+
-            '<label>Pris:</label> 40000' +
+            '<label>Pris:</label> 40000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -123,7 +116,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 30000' +
             '<br>'+
-            '<label>Pris:</label> 30000' +
+            '<label>Pris:</label> 30000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -140,7 +133,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 450000' +
             '<br>'+
-            '<label>Pris:</label> 50000' +
+            '<label>Pris:</label> 50000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -157,7 +150,7 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 4700000' +
             '<br>'+
-            '<label>Pris:</label> 150000' +
+            '<label>Pris:</label> 150000kr' +
             '<br>' +
             '</div>'+
             '</div>';
@@ -174,12 +167,13 @@ $(document).ready(function() {
             '<br>'+ 
             '<label>Räckvidd:</label> 1500000' +
             '<br>'+
-            '<label>Pris:</label> 80000' +
+            '<label>Pris:</label> 80000kr' +
             '<br>' +
             '</div>'+
             '</div>';
 
 
+        //Insättningen av HTML strängen i kartan
         var infowindow1 = new google.maps.InfoWindow({
           content: contentStringKorsvegen,
         });
@@ -219,7 +213,7 @@ $(document).ready(function() {
           content: contentStringCentralen
         });
 
-
+        // En lista av de olika informations rutorna
         var windowList = [infowindow1,infowindow2,infowindow3,infowindow4,infowindow5,infowindow6,infowindow7,infowindow8,infowindow9];
 
         var marker1 = new google.maps.Marker({
@@ -227,6 +221,7 @@ $(document).ready(function() {
           map: map
         });
 
+        //Sätter lyssnare på de olika markörerna och händelserna som ska ske när man trycker på dom
         marker1.addListener('click', function() {
           for(i=0; i <= windowList.length; i++){
             if(windowList[i] === infowindow1){
@@ -244,6 +239,9 @@ $(document).ready(function() {
         });
         marker2.addListener('click', function() {
            for(i=0; i <= windowList.length; i++){
+
+            //Kolla om det är ju den markören som vi tryckt på, om så stängs alla andra av så att bara en 
+            //meddelande ruta åt gången kan vara uppe
             if(windowList[i] === infowindow2){
               infowindow2.open(map, marker2);  
             }

@@ -2,29 +2,38 @@
 
 <html>
 <head>
-
+  <!--Länk till bootstrap-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  <meta charset="utf-8">
+ <!--För att kunna visas korrekt på apple produkter -->
 <meta name="viewport" content="witdth=devicewidth, initial-scale=1">
+<!--Länk till css fil -->
 <link type="text/css" rel="stylesheet" href=".\style\stylesheet.css"/>
+<!--Länk till flik ikon -->
 <link rel="shortcut icon" type="image/x-icon" href=".\img\Head_Logo.ico" />
+<!--Länk till google api-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--Länk till google kompatibel JQuery-->
 <link rel="stylesheet" href=".\jquery-ui\jquery-ui.min.css">
 <script src=".\external\jquery\jquery.js"></script>
 <script src=".\jquery-ui\jquery-ui.min.js"></script>
+<!--Titel på sidflik-->
 	<title>TaggaDig</title>
 
 </head>
 <body>
+  <!--Container för hela sidan -->
 <div class="container-fluid no-padding">
 
-      <!-- Static navbar -->
+  <!-- Header bakgrund-->
       <header class="background-grey">
+        <!--Navbar som ligger i header -->
       <nav class="navbar navbar-default no-background no-border">
       <div class="col-md-2">
       </div>
         <div class="col-md-8 container-fluid" >
           <div class="navbar-header">
+            <!--Knappar till menyn, som också är responsiv -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
@@ -33,6 +42,7 @@
             </button>
             <a href="#"><img id="logo" src=".\img\Logo.png"></a>
           </div>
+          <!--Responsiv navbar -->
           <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right">
               <li class="button active2"><a href="#">Hem</a></li>
@@ -44,7 +54,8 @@
               <li id="register"><a href="#">Registrera</a></li>
               <li><a id="username" class="username-header" href="#">Inloggad som</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
+          <!--/Responsiv navbar -->
         </div>
         <div class="col-md-2">
         </div>

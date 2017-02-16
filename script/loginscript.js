@@ -1,15 +1,16 @@
+
+// Variabler som skapas för att lagra användare inmatningen
 var usernameInput = "";
 var usernamePass = "";
 
 $(document).ready(function() {
+
 			var userObject = sessionStorage.getItem("userObject");
-				console.log(userObject);
 
 			if(userObject != null){
 				$("#username").text(userObject);
 				$('#login-background').css('visibility', 'hidden');
 				$('.login').text("Logga ut");
-				console.log("fsdg");
 			}
 			else{
 				$('.login').text("Logga in");
@@ -23,6 +24,7 @@ $(document).ready(function() {
 				}
 			});
 
+			//Funktion och anrop när man trycker på logga in knappen
 			$("#login-frontpage").click(function() {
 
 				usernameInput = $("#userEmail").val();
@@ -34,8 +36,8 @@ $(document).ready(function() {
 					password: usernamePass
 
 				};
-				}
-			});
+
+				//AJAX anrop som skickar iväg användar inmatningen och gör diverse grejer på sidan
 				$.ajax({
 					type: "POST",
 					url: "http://taggadig.zocomutbildning.se/test/login.php",
@@ -44,17 +46,15 @@ $(document).ready(function() {
 					success: function(data) {
 						$("#username").text(data.data[0].business);
 						sessionStorage.setItem("userObject", data.data[0].business);
-						console.log(sessionStorage.getItem("userObject"));
 						$('.login').text("Logga ut");
 						$('#login-background').css('visibility', 'hidden');
 
 					}
 				})
-				.fail(function(error, status, errortext){
-					console.log(error);
-					console.log(status);
-					console.log(errortext);
 
+				//Ger ett felmeddelande om lösenord eller användarnamn inte stämmer
+				.fail(function(){
+					alert("Fel användarnamn eller lösenord");
 				});
 			});
 		});
