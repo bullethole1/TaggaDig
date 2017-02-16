@@ -63,26 +63,28 @@
 <div class="col-md-3"></div>
 
 <div class="col-md-6 ramForBooking transparent-background">
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle borderField" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Områden <span class="caret borderField"></span>
-  </button>
-  <ul class="dropdown-menu borderField">
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-  </ul>
-</div>
+
+<select id="mySelect" style="border: 1px solid black">
+  <option value="Områden">Områden</option>
+  <option value="Centralstationen">Centralstationen</option>
+  <option value="Brunnsparken">Brunnsparken</option>
+  <option value="Östra-Hamngatan">Östra Hamngatan</option>
+  <option value="Grönsakstorget">Grönsakstorget</option>
+  <option value="Kungsportsplatsen">Kungsportsplatsen</option>
+  <option value="Götaplatsen">Götaplatsen</option>
+  <option value="Vasastan">Vasastan</option>
+  <option value="Svingeln">Svingeln</option>
+  <option value="Korsvägen">Korsvägen</option>
+</select>
+
 <br>
 <br>
 
-<!-- Single button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle borderField" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret borderField"></span>
-  </button>
-  <ul class="dropdown-menu borderField">
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-  </ul>
-</div>
+<select id="mySelect" style="border: 1px solid black">
+  <option value="Type">Type</option>
+  <option value="mobile">Mobile</option>
+  <option value="display">Display</option>
+</select>
 
 <div style="text-align: right">
 <button id="tryckboka"type="button" class="btn btn-default">Boka</button>
@@ -98,7 +100,7 @@
 
 
 
-<footer class="footer background-grey" style="margin-top: 75px">
+<footer class="footer background-grey" style="margin-top: 105px">
 <div class="tagga">
   <p class="glyphicon glyphicon-copyright-mark">2017 by TaggaDig</p>
   </div>
@@ -173,6 +175,7 @@
 <script src=".\script\mainscript.js"></script>
 <script src=".\script\map-script.js"></script>
 <script type=".\script\bokningsform.js"></script>
+
 <script type="text/javascript">
   $(document).ready(function() {
     $("#book").on('input', function() {
