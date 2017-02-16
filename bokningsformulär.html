@@ -78,28 +78,44 @@
 </select>
 
 <br>
-<br>
 
-<select id="mySelect" style="border: 1px solid black">
+<div style="padding-top: 10px">
+<select id="mySelect" style="border: 1px solid black; padding-top">
   <option value="Type">Type</option>
   <option value="mobile">Mobile</option>
   <option value="display">Display</option>
 </select>
+</div>
 
-<div style="text-align: right">
+<div style="padding-top: 10px"> <!--fälten-->
+<input type="förnamn" class="form-control" id="förnamn" placeholder="Förnamn">
+<input type="efternamn" class="form-control" id="efternamn" placeholder="efternamn">
+<input type="email" class="form-control" id="mailen" placeholder="email">
+<input type="telefon" class="form-control" id="telefon" placeholder="telefonnr">
+<input type="företag" class="form-control" id="telefon" placeholder="Företagsnamn">
+</div> <!--fälten-->
+
+<div id="textfältet" style="padding-top: 10px; text-align: left"> <!--textfält-->
+<p for="exampleTextarea">övriga kommentarer:</p>
+<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+</div> <!--textfält-->
+
+<div id="laddaUp"> <!--ladda upp fil-->
+<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+</div> <!--ladda upp fil-->
+
+<div id="bokat">
 <button id="tryckboka"type="button" class="btn btn-default">Boka</button>
 </div>
 
 
 </div> <!--/col-md-6-->
-
 <div class="col-md-3"></div>
-
 
 </div> <!--/mina Tabeller-->
 
 
-
+<!-- footer -->
 <footer class="footer background-grey" style="margin-top: 105px">
 <div class="tagga">
   <p class="glyphicon glyphicon-copyright-mark">2017 by TaggaDig</p>
@@ -110,12 +126,12 @@
   <a href="https://twitter.com/"><img src=".\img\Twitter_logo.png"></a>
   <a href="https://plus.google.com/"><img src=".\img\Google_Plus_logo.png"></a>
 </div>
-</footer>
+</footer> <!-- footer -->
 
 
 </div> <!-- container -->
 
-
+<!-- För registeringsformuläret -->
                 <div id="registerform" title="REGISTRERING">
                   <form>
                     <fieldset>
@@ -167,7 +183,7 @@
                 <button type="button">Registrera</button>
                 </fieldset>
                 </form>
-                </div>
+                </div> <!-- För registeringsformuläret -->
 
 
 
