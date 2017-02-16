@@ -2,28 +2,35 @@
 
 <html>
 <head>
-
+  <!--Länk till botstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <meta charset="utf-8">
+   <!--För att kunna visas korrekt på apple produkter -->
   <meta name="viewport" content="witdth=devicewidth, initial-scale=1">
+  <!--Länk till css fil -->
   <link type="text/css" rel="stylesheet" href=".\style\stylesheet.css"/>
+  <!--Länk till flik ikon -->
   <link rel="shortcut icon" type="image/x-icon" href=".\img\Head_Logo.ico" />
+  <!--Länkar till JQuery för google maps api -->
   <link rel="stylesheet" href=".\jquery-ui\jquery-ui.min.css">
   <script src=".\external/jquery/jquery.js"></script>
   <script src=".\jquery-ui\jquery-ui.min.js"></script>
+  <!--Titel på sidflik -->
   	<title>TaggaDig</title>
 
 </head>
 <body>
+  <!--Container för hela sidan -->
 <div class="container-fluid no-padding">
-
-  <!-- Static navbar -->
+  <!-- Header bakgrund-->
   <header class="background-grey">
+    <!--Navbar som ligger i header -->
   <nav class="navbar navbar-default no-background no-border">
   <div class="col-md-2">
   </div>
     <div class="col-md-8 container-fluid" >
       <div class="navbar-header">
+        <!--Knappar till menyn, som också är responsiv -->
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -32,6 +39,7 @@
         </button>
         <a href="#"><img id="logo" src=".\img\Logo.png"></a>
       </div>
+      <!--Responsiv navbar -->
       <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right">
           <li class="button"><a href="#">Hem</a></li>
@@ -43,13 +51,15 @@
           <li id="register"><a href="#">Registrera</a></li>
           <li><a id="username" class="username-header" href="#">Inloggad som</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
+            <!--/Responsiv navbar -->
     </div>
     <div class="col-md-2">
     </div>
       </nav>
       </header>
 
+      <!--Jumbotron som innehåller google maps -->
           <section>
             <div style="text-align: auto" class="jumbotron googlebild no-padding">
             <section>
@@ -69,8 +79,8 @@
               </div>
 
 
-
-            <article>
+              <!--Section med rubrik samt underrubrik -->
+            <section>
                <div class="row">
                <div class="line2 col-md-12">
                <div class="heading-style">
@@ -78,11 +88,10 @@
                <h4>Välj bland våra färdiga paket som passar ditt företag bäst</h4>
                </div>
                 </div>
-            </article>
-
+            </section>
+            <!--Section med informtion om olika paket -->
              </section>
-
-            <div class="row">
+             <div class="row">
               <div class="col-md-12 boka">
                 <div class=" border row placeholders">
                   <div class="col-md-3 placeholder package1">
@@ -106,7 +115,7 @@
             </div> <!--row-->
 
 </div><!--/.container-fluid -->
-
+<!--Footer med länkar till sociala medier -->
 <footer class="footer background-grey">
 <div class="tagga">
   <p class="glyphicon glyphicon-copyright-mark">2017 by TaggaDig</p>
@@ -118,7 +127,7 @@
   <a href="https://plus.google.com/"><img src=".\img\Google_Plus_logo.png"></a>
 </div>
 </footer>
-
+                <!--Popup ruta för registreringsformulär -->
                 <div id="registerform" title="REGISTRERING">
                   <form>
                     <fieldset>
@@ -177,12 +186,15 @@
 
 
 
-
+<!--Länk till bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--Länk till mainscript -->
 <script src=".\script\mainscript.js"></script>
+<!--Länk till mapscript -->
 <script src=".\script\map-script.js"></script>
+<!--Länk till login script -->
 <script src=".\script\loginscript.js"></script>
-
+<!--Länk till google maps api -->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBadYreLXUab7Ssq5A7WEJ1yzpIJ20yKco&callback=initMap"></script>
 </body>
