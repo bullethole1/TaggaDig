@@ -1,12 +1,8 @@
-<?php 
-    include_once'database.php';
-    require_once'session.php'; 
-    failed();     // kom inte åt försen inlogg
-    $_SESSION['logged_in'] = $_POST['email'];
-
-// $_SESSION['email'] = $user_email;
-
-
+<?php
+require 'database.php';
+require 'session.php';
+failed();     // kom inte åt försen inlogg
+$_SESSION['logged_in'] = $_POST['email'];
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +13,7 @@
 <body>
 
 <form action="#" method="POST">
-<button type="submit">Bekräfta </button>
+    <button type="submit">Bekräfta</button>
 </form>
 
 </body>
