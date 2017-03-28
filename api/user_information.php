@@ -1,13 +1,18 @@
 <?php
 require 'session.php';
 require 'database.php';
-failed();
+user_login_failed();
 
 
 //SE ANVÄNDARINFO
 $sql_user = "SELECT business, firstName, lastName, email, phone  FROM `members` WHERE `id` = :sessionId";
-$row = $pdo->prepare($sql_user);
-$row->execute(['sessionId' => $_SESSION['userid']]);
-$resultat = $row->fetchAll(PDO::FETCH_ASSOC);
-$main_user = array('data' => $resultat);
-echo json_encode($main_user, JSON_UNSCAPE_UNICODE);
+function show_user_order_information()
+{
+    global $pdo;
+    global $sql;
+    $row = $pdo->prepare($sql);
+    $row->execute(['id' => $_SESSION['userid']]);
+    $result = $row->fetchAll(\PDO::FETCH_ASSOC);
+    $main_order = array('data' => $result);
+    echo json_encode($main_order, JSON_UNESCAPED_UNICODE);
+}
