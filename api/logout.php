@@ -1,10 +1,5 @@
-<?php 
+<?php
 
-require_once'session.php'; 
+require 'session.php';
 session_destroy();
-    header('Refresh: 1;url=connect.php');
-    // echo "Du är utloggad";
-
-
-
-?>
+header('Refresh: 1;url=start_page.php');
