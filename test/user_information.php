@@ -1,7 +1,7 @@
 <?php
 require_once'session.php'; 
 include_once'database.php';
-failed();
+user_login_failed();
 
 
 //SE ANVÄNDARINFO

@@ -1,7 +1,7 @@
 <?php
 require 'database.php';
 require 'session.php';
-failed();     // kom inte åt försen inlogg
+user_login_failed();     // kom inte åt försen inlogg
 $_SESSION['logged_in'] = $_POST['email'];
 
 ?>

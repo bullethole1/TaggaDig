@@ -14,10 +14,10 @@ return $output;
 }
 
 
-// OM man inte är inloggad skicka tillbaka till connect.php
+// OM man inte är inloggad skicka tillbaka till start_page.php
 function  failed(){
     if(!isset ($_SESSION['logged_in']) ){
-        header("Location: connect.php");
+        header("Location: start_page.php");
         exit;
     }
 }
@@ -25,7 +25,7 @@ function  failed(){
 
 function admin(){
     if(!isset($_SESSION['usertype'])){
-        header("Location: connect.php");
+        header("Location: start_page.php");
         exit;
     }
 }

@@ -3,7 +3,7 @@ require_once "session.php";
 include_once 'database.php';
 $_SESSION['message'] = json_encode(false);
 $_SESSION['logged_in'] = $_POST['email'];
-failed();
+user_login_failed();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $_POST['email'];
     $password = $_POST['password'];
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } 
     }else {
         $_SESSION['message'];
-        header('location: connect.php');
+        header('location: start_page.php');
         exit;
     }
 }

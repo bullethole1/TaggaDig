@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $main = array('data' => $rows);
         $encrypted = crypt($password, $rows[0]['salt']);
-        if($encrypted == $rows[0]['password']){
-        $_SESSION['userid'] = $rows[0]['id'];
-        $_SESSION['user_type'] =$rows[0]['user_type'];
-        echo json_encode($main);
-    } 
-    }else {
+        if ($encrypted == $rows[0]['password']) {
+            $_SESSION['userid'] = $rows[0]['id'];
+            $_SESSION['user_type'] = $rows[0]['user_type'];
+            echo json_encode($main);
+        }
+    } else {
         echo json_encode($_SESSION['message']);
         header('location: start_page.php');
         exit;

@@ -65,7 +65,7 @@ if (!isset($_FILES['upFile']['tmp_name'])) {
     $stm_insert->bindParam(10, $_SESSION['userid']);
     $stm_insert->execute();
     $lastid = $pdo->lastInsertId();
-    //    echo " <p> Din bild: </p> <img src=get.php?id=$lastid width='200px'>";
+    //    echo " <p> Din bild: </p> <img src=get_image.php?id=$lastid width='200px'>";
 }
 // }
 ?>

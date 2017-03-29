@@ -1,7 +1,6 @@
 <?php
 include_once('database.php');
 
-//image from create order
 $id = addslashes( $_REQUEST['id']);
 
 $sql = "SELECT `upFile` FROM `orders` WHERE `orderNr` = $id";
